@@ -229,6 +229,8 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
     R'
   ```
 * Hdl: 5 R-activities. First is R2, then R'-R 2 times. First and third its D/D'. 2nd/4th its U2
+    * R' starts from 2nd.
+    * There is no U' confusion
   ```
     R2 D
     R'   U2
@@ -237,6 +239,8 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
     R'
   ```
 * Chameleon Car: 5 R-activites. U' all the way. U'2 first and last U's in between.
+    * There is no R' at all.
+    * There is no U' at all too.
   ```
     R  U2
     R2 U'
