@@ -236,3 +236,11 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
     R'   U2
     R'
   ```
+* Chameleon Car: 5 R-activites. U' all the way. U'2 first and last U's in between.
+  ```
+    R  U2
+    R2 U'
+    R2 U'
+    R2 U2
+    R
+  ```
