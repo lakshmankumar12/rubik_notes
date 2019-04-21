@@ -65,7 +65,7 @@ Algo: R U R' U R U U R'
 ```
     b       b                 r       f
   +---+---+---+             +---+---+---+
-l | P | a | Q | r         R | f | b | S | l  * Middle undergoes anti-clock shift w/o c.
+l | P | a | Q | r         R | f | b | S | l  * Edges undergo anti-clock shift except edge-c
   +---+---+---+             +---+---+---+    * Corners S&Q, P&R are swapped.
   | d | x | b |    -->      | a | x | d |    * S goes undisturbed w.r.t yellow face
   +---+---+---+             +---+---+---+    * Note the R-f, Q-r, P-b come on top.
@@ -112,7 +112,8 @@ Possible options:
 ```
 
 So, if you have
-|| No  || No Yellow Already ||  Name           ||  Orient        ||  Next step  ||
+|  No  |  No Yellow Already  |  Name           |   Orient        |   Next step  |
+| ---- | ------------------- | --------------- | --------------- | -------------|
 |  1   |  1                  |  Regular fish   |    Std          |         (1)  |
 |  2   |  1                  |  Other fish     |    Std          | RgrFsh  (2)  |
 |  3   |  0                  |  Double Headlgt | Yellow on side  | RgrFsh  (2)  |
@@ -128,27 +129,27 @@ Basically, its always LFT corner of interest.
 
 ## Get Yellow Corners right
 
-Align existing 2 matched corners. And F is the opp side.
-  (Otherwise, 2 diagnol corners will be matching. Then do it 2 times)
+* Align existing 2 matched corners. And F is the opp side.
+* Otherwise, 2 diagnol corners will be matching. Then do it 2 times
 
-Algo:
+### Algo
 R' F R' B B R F' R' B B R R U'
-Menomic:
-Radio-frequency, R' to begin with.
-R' B B R (the R' matches first R)
-F'       (this is opp to the R'-F you begin with)
-R' B B R
-R U' (this you will easily realize as you do)
+### Menomic
+* Radio-frequency, R' to begin with.
+* R' B B R (the R' matches first R)
+* F'       (this is opp to the R'-F you begin with)
+* R' B B R
+* R U' (this you will easily realize as you do)
 
 ## Get Yellow Edges right
 
-Algo:
+### Algo
 F F U L R' F F L' R U F F
-Mnemonic
-F-full, rolling on the floor laughing, ruff
-Basically, 2 F's and the U is in the direction of adjustment.
-L/R towards you first. and Against you next.
-The last U is easily visible.
+### Mnemonic
+* F-full, rolling on the floor laughing, ruff
+* Basically, 2 F's and the U is in the direction of adjustment.
+* L/R towards you first. and Against you next.
+* The last U is easily visible.
 
 # The other standard move.
 
@@ -202,7 +203,8 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
 
 ## OLL
 
-|| Case             || algo                     | Start-pos         |   Reverse             |
+|  Case             |  algo                     | Start-pos         |   Reverse             |
+| ----------------- | ------------------------- | ----------------- | --------------------- |
 | Regular fish      | R  U  R' U  R  U  U  R'   | Yellow up in TFL  |   R U2 R' U' R U' R'  |
 | Other   fish      | R' U' R  U' R' U' U' R    | Yellow up in RBL  |   R' U2 R U R' U R    |
 | Headlights        | R2 D R' U2 R D' R' U2 R'  | Lights in F side  |   R U2 R D R' U2 R D' R2 |
