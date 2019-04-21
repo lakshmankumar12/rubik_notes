@@ -78,7 +78,7 @@ Possible options:
 
 ```
   Regular fish.          Other Fish               Headlight
-                                    -
+    -                               -
   +---+---+---+           +---+---+---+           +---+---+---+
   |   | x |   | |         | x | x |   |           | x | x | x |
   +---+---+---+           +---+---+---+           +---+---+---+
@@ -219,7 +219,11 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
 * Regular Fish : regular!
 * Other   Fish : R direction start with towards you, instead of against you, and its U' instead of U
 * Chameleon/Diagnol: Diagnol starts with D. Its RUR' - D - RU'R' - D'
-* Double Hdl: Total of 6 Rs, start with R(away, like regular-fish). U is in between every R. First 2 U's are regular, 3rd is U', last is U2(this is visible)
+* Double Hdl:
+    * Total of 6 Rs
+    * start regulaly with R.
+    * U is in between every R.
+    * First 2 U's are regular, 3rd is U', last is U2(this is visible)
   ```
     R  U
     R' U
@@ -228,9 +232,11 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
     R  U2
     R'
   ```
-* Hdl: 5 R-activities. First is R2, then R'-R 2 times. First and third its D/D'. 2nd/4th its U2
-    * R' starts from 2nd.
-    * There is no U' confusion
+* Hdl:
+    * 5 R-activities.
+    * First is R2 and R' starts from 2nd.
+    * There is no U'
+    * D is first. U2 next. Also note R' at end
   ```
     R2 D
     R'   U2
@@ -238,9 +244,9 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
     R'   U2
     R'
   ```
-* Chameleon Car: 5 R-activites. U' all the way. U'2 first and last U's in between.
-    * There is no R' at all.
-    * There is no U' at all too.
+* Chameleon Car:
+    * 5 R-activites. U' all the way. U'2 first and last U's in between.
+    * There is no R' and U at all.
   ```
     R  U2
     R2 U'
@@ -248,3 +254,71 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
     R2 U2
     R
   ```
+* Mnemonic for last 3
+  ```
+   double headlight:  r r' r r' r r'   . u . u . u' . u . uu .
+   headlight:         rr r' r r' r'    . d . uu . d' . uu .      (only one to have d, rr as start)
+   chameleon car:     r rr rr rr r     . u'u' . u' . u'. u'u' .  (r & u double wrap opposite way)
+  ```
+
+## PLL
+
+### Corners
+
+```
+
+  +---+---+---+
+  | A |   | B |
+  +---+---+---+
+  |   |   |   |
+  +---+---+---+
+  | C |   | D |
+  +---+---+---+
+```
+* Swap C & D : R' F R' B B R F' R' B B R R
+    * Historically, i remember is as radio-freq, RBBR, F', RBBR
+    ```
+            R'
+        F   R'  B
+                B
+            R
+        F'  R'  B
+                B
+            R
+            R           <-- Visible
+    ```
+* Swap A & D : F R U' R' U' R U R' F' R U R' U' R' F R F'
+    ```
+                 F   0f
+         R   U'      1
+         R'  U'      2
+         R   U       3u
+         R'      F'  4f
+         R   U       5u
+         R'  U'      6
+         R'      F   7f
+         R       F'  8f
+    ```
+
+### Edges
+
+```
+
+  +---+---+---+
+  |   | F |   |
+  +---+---+---+
+  | E |   | G |
+  +---+---+---+
+  |   | H |   |
+  +---+---+---+
+```
+* Cycle E->G->H:  M M U' M U U M' U' M M
+* Cycle E->H->G:  M M U  M U U M' U  M M
+    * Mnemonic: Mu-mUm'-uM
+    * cap for M2, U2, M2
+    * Mu, uM's U dir is opp to how you want.
+    * No M'
+* Swap F<->H, E<->G: M M U M M U      U M M U M M
+    * Mnemonic: Mu-Mu-uM-uM
+* Swap E<->F, G<->H: M M U M M U M' U U M M U U M'
+    * Mnemonic: Mu-Mu m'u uM-Um'
