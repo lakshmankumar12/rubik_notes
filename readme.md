@@ -8,7 +8,7 @@
 
 ## Get Yellow Plus
 
-Algo: F U R U' R' F
+Algo: F U R U' R' F'
 ```
   +---+---+---+         +---+---+---+
   |   | A |   |         |   | C'|   |
@@ -19,7 +19,7 @@ Algo: F U R U' R' F
   +---+---+---+         +---+---+---+
 ```
 
-Algo: F R U R' U' F
+Algo: F R U R' U' F'
 ```
   +---+---+---+         +---+---+---+
   |   | B |   |         |   | A |   |
@@ -213,3 +213,26 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
 | Diagnals          | X' D R U R' D' R U' R'    | Yellow side at TFL,L side         | (see chameleon) |
 | Double headlights | R U R' U R U' R' U R U2 R'| Yellow on sides   |  R U2 R' U' R U R' U' R U' R' |
 | Chameleon car     | R U2 R2 U' R2 U' R2 U2 R  | Yellow on sides   |  R' U2 R2 U R2 U R2 U2 R' |
+
+### Mnemonics
+
+* Regular Fish : regular!
+* Other   Fish : R direction start with towards you, instead of against you, and its U' instead of U
+* Chameleon/Diagnol: Diagnol starts with D. Its RUR' - D - RU'R' - D'
+* Double Hdl: Total of 6 Rs, start with R(away, like regular-fish). U is in between every R. First 2 U's are regular, 3rd is U', last is U2(this is visible)
+  ```
+    R  U
+    R' U
+    R  U'
+    R' U
+    R  U2
+    R'
+  ```
+* Hdl: 5 R-activities. First is R2, then R'-R 2 times. First and third its D/D'. 2nd/4th its U2
+  ```
+    R2 D
+    R'   U2
+    R  D'
+    R'   U2
+    R'
+  ```
