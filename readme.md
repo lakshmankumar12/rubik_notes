@@ -112,6 +112,7 @@ Possible options:
 ```
 
 So, if you have
+
 |  No  |  No Yellow Already  |  Name           |   Orient        |   Next step  |
 | ---- | ------------------- | --------------- | --------------- | -------------|
 |  1   |  1                  |  Regular fish   |    Std          |         (1)  |
