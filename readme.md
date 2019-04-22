@@ -221,9 +221,8 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
 * Chameleon/Diagnol: Diagnol starts with D. Its RUR' - D - RU'R' - D'
 * Double Hdl:
     * Total of 6 Rs
-    * start regulaly with R.
-    * U is in between every R.
-    * First 2 U's are regular, 3rd is U', last is U2(this is visible)
+    * It goes same as regular until R-U-R'-U-R
+    * Then instead of UU-R' as in regular, you have U'-R' (this finishes until regular), and one extra round R-U2-R'
   ```
     R  U
     R' U
@@ -234,9 +233,10 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
   ```
 * Hdl:
     * 5 R-activities.
-    * First is R2 and R' starts from 2nd.
-    * There is no U'
-    * D is first. U2 next. Also note R' at end
+    * First is R2 and R' starts from 2nd. Also note R' at end
+    * D is first. This is the only one to have D among last 3.
+    * There is no single U/U'
+    * D/U2 alternate
   ```
     R2 D
     R'   U2
@@ -247,18 +247,14 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
 * Chameleon Car:
     * 5 R-activites. U' all the way. U'2 first and last U's in between.
     * There is no R' and U at all.
+    * Remember symmetry - 3 R2 sandwiched between R. 2 U' sandwiched between U2.
+        * The U2 is outer, and R2 is inner.
   ```
     R  U2
     R2 U'
     R2 U'
     R2 U2
     R
-  ```
-* Mnemonic for last 3
-  ```
-   double headlight:  r r' r r' r r'   . u . u . u' . u . uu .
-   headlight:         rr r' r r' r'    . d . uu . d' . uu .      (only one to have d, rr as start)
-   chameleon car:     r rr rr rr r     . u'u' . u' . u'. u'u' .  (r & u double wrap opposite way)
   ```
 
 ## PLL
@@ -316,9 +312,9 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
 * Cycle E->H->G:  M M U  M U U M' U  M M
     * Mnemonic: Mu-mUm'-uM
     * cap for M2, U2, M2
-    * Mu, uM's U dir is opp to how you want.
-    * No M'
+    * {Mu, uM}'s u dir is opp to how you want.
 * Swap F<->H, E<->G: M M U M M U      U M M U M M
     * Mnemonic: Mu-Mu-uM-uM
 * Swap E<->F, G<->H: M M U M M U M' U U M M U U M'
     * Mnemonic: Mu-Mu m'u uM-Um'
+    * {1-Mu, 2-Mu, 3-uM} same as opp. there is mu' in between and Um' for 4th.
