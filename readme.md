@@ -4,11 +4,11 @@
 
 |  Link         | Explains          |
 |-------------- | ----------------- |
-| https://ruwix.com/the-rubiks-cube/algorithm/             |  Best listing of all algo-steps        |
-| http://lghttp.60951.nexcesscdn.net/80487FB/Downloads/resources/downloads/Rubiks_3x3_Solution_Guide1.pdf | Basic steps |
-| http://en.lerubikscube.com/how-to-solve-rubiks-cube/#Step_5_in_how_to_solve_the_Rubiks_cube_edges_permutation | Alternate beginner method where yellow cross is set right, w/o doing yellow face and corners are permuted rightly |
-| https://ruwix.com/the-rubiks-cube/advanced-cfop-fridrich/first-two-layers-f2l/  | Fridrich's first 2 layer explained best |
-| http://loki.ist.unomaha.edu/~jtrimm/project/ollpll.html  |  Fridrich's 2-Step OLL explained best. |
+| Best listing of all algo-steps                                                                                    | https://ruwix.com/the-rubiks-cube/algorithm/                                                                  |
+| Basic steps                                                                                                       | http://lghttp.60951.nexcesscdn.net/80487FB/Downloads/resources/downloads/Rubiks_3x3_Solution_Guide1.pdf       |
+| Alternate beginner method where yellow cross is set right, w/o doing yellow face and corners are permuted rightly | http://en.lerubikscube.com/how-to-solve-rubiks-cube/#Step_5_in_how_to_solve_the_Rubiks_cube_edges_permutation |
+| Fridrich's first 2 layer explained best                                                                           | https://ruwix.com/the-rubiks-cube/advanced-cfop-fridrich/first-two-layers-f2l/                                |
+| Fridrich's 2-Step OLL explained best.                                                                             | http://loki.ist.unomaha.edu/~jtrimm/project/ollpll.html                                                       |
 
 # Standard Moves
 
@@ -246,6 +246,46 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
         R U' R'                                  F' U  F
 ```
 
+### other cases
+
+* Case of having both corner and edge on top layer.
+    * The corner's top color matches the edge's top color
+        * If they are touching-touching the right way, its the easy case.
+        * If they are not touching-touching, put the corner down, and orient the
+                edge to arrive at its touching-touching position.
+            * You will have to move the white to corner of other side(side not on top),
+                and make the edge piece go to the non-involed side.
+        * If they are touching-touching the wrong way:
+            * Make the corner come to the top color's side. The edge is hence on the
+                non-involved side.
+            * Put corner down. Move edge 180. (You can also do just 90. But this maintains
+                symm-with the white-on-top-case)
+            * Bring corner back up. Now move corner 180 to other side. Put it down.
+            * Bring edge to its desired position for touching-touching.
+    * Corner's top is opposite to Edge's.
+        * You target simple roll-over.
+        * Put corner-down. Aligh edge to its right spot.
+    * White on top
+        * Align edge with its side.
+            * Corner not-touching or corner touching and is in target-location.
+                * Rotate edge away.
+                * For corner-not-touching, bring corner on top of edge.
+                    * you will have touch-touching case now.
+                * For corner-touching/at-target-loc case, move corner 180.
+                    * you will have simple rollover case.
+            * Corner touching and is at the away side.
+                * You can't rotate edge away, as that puts corner down.
+                * Bring corner 180* to other side. Edge will goto non-involed side.
+                * Put corner down. Move edge 180. Bring corner up
+                * You are now in the non-touching case. Rotate edge away
+                * Bring white 180* on top of edge. Restore.
+                * You are in touching-touching case.
+* If edge is on top and corner is in bottom layer.
+    * Try to shoot for easy-case as you move up.
+        * If white is down. target simple rollover.
+        * If white on side, touching or simple rollover. (depends on edge color on top)
+        * sometimes touching is not possible, in that case, shoot for white-on-top
+* If edge is in middle, again try to get into one of the easy cases.
 
 ## OLL
 
