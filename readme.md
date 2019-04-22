@@ -1,5 +1,15 @@
 # Rubik Notes
 
+# References
+
+|  Link         | Explains          |
+|-------------- | ----------------- |
+| https://ruwix.com/the-rubiks-cube/algorithm/             |  Best listing of all algo-steps        |
+| http://lghttp.60951.nexcesscdn.net/80487FB/Downloads/resources/downloads/Rubiks_3x3_Solution_Guide1.pdf | Basic steps |
+| http://en.lerubikscube.com/how-to-solve-rubiks-cube/#Step_5_in_how_to_solve_the_Rubiks_cube_edges_permutation | Alternate beginner method where yellow cross is set right, w/o doing yellow face and corners are permuted rightly |
+| https://ruwix.com/the-rubiks-cube/advanced-cfop-fridrich/first-two-layers-f2l/  | Fridrich's first 2 layer explained best |
+| http://loki.ist.unomaha.edu/~jtrimm/project/ollpll.html  |  Fridrich's 2-Step OLL explained best. |
+
 # Standard Moves
 
 1. Get white cross
@@ -154,10 +164,46 @@ F F U L R' F F L' R U F F
 
 # The other standard move.
 
+* Same as regular until yellow cross (FRU-RUF)
+* Now instead of targeting yellow-face, make sure the yellow edges are rightly in place with their color
+    * you either have it all aligned or 2 adjacents ones are okay and other two aren't. No other possibility.
+    * Keep the 2 aligned on R and B sides and do R-U-R'-U-R-U2-R'
+    * This will align all yellow edges
+* Now make sure all yellow corners are in place (but oriented anyway)
+    * you either have it all aligned Or (one in place, and other 3 unaligned). No other possibility
+    * You will have to do U R U' L' U R' U' L.
+    * It will switch the 3. You have to do it one or two times
+        ```
+          +---+---+---+         +---+---+---+
+          | A | . | B |         | B | . | C |
+          +---+---+---+         +---+---+---+
+          | . | . | . |   --->  | . | . | . |
+          +---+---+---+         +---+---+---+
+          | C | . | G |         | A | . | G |
+          +---+---+---+         +---+---+---+
+        ```
+* Now Orient the yellow corners Correctly with yellow coming to top.
+    * Algo: R U R' U R U2 R' L' U' L U' L' U2 L.
+    * Note that the 2nd half is a mirror image of first half, which is the std step.
+        ```
+            B                     C
+          +---+---+---+         +---+---+---+
+        C | A | . | . |       A | B | . | . |
+          +---+---+---+         +---+---+---+
+          | . | . | . |   --->  | . | . | . |
+          +---+---+---+         +---+---+---+
+        Q | P | . | . |       P | R | . | . |
+          +---+---+---+         +---+---+---+
+            R                     Q
+        ```
+    * It will orient the left 2 corners. If your yellows are on F&B, you are done in one step.
+    * Otherwise you will have to do this utmost 3 times.
 
-# Getting 2nd layer and white corners in one shot.
+# Fridrich
 
-## Easy cases
+## Getting 2nd layer and white corners in one shot.
+
+### Easy cases
 
 ```
       Simple Roll-over from F               Simple Roll-over from R
@@ -200,19 +246,18 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
         R U' R'                                  F' U  F
 ```
 
-# Fridrich
 
 ## OLL
 
 |  Case             |  algo                     | Start-pos         |   Reverse             |
 | ----------------- | ------------------------- | ----------------- | --------------------- |
 | Regular fish      | R  U  R' U  R  U  U  R'   | Yellow up in TFL  |   R U2 R' U' R U' R'  |
-| Other   fish      | R' U' R  U' R' U' U' R    | Yellow up in RBL  |   R' U2 R U R' U R    |
+| Other   fish      | R' U' R  U' R' U' U' R    | Yellow up in TBL  |   R' U2 R U R' U R    |
 | Headlights        | R2 D R' U2 R D' R' U2 R'  | Lights in F side  |   R U2 R D R' U2 R D' R2 |
 | Chameleon         | X' R U R' D R U' R' D'    | Like Hdlght, and Yellow face in F | (see diagnol) |
 | Diagnals          | X' D R U R' D' R U' R'    | Yellow side at TFL,L side         | (see chameleon) |
 | Double headlights | R U R' U R U' R' U R U2 R'| Yellow on sides   |  R U2 R' U' R U R' U' R U' R' |
-| Chameleon car     | R U2 R2 U' R2 U' R2 U2 R  | Yellow on sides   |  R' U2 R2 U R2 U R2 U2 R' |
+| Chameleon car     | R U2 R2 U' R2 U' R2 U2 R  | Lights on sides   |  R' U2 R2 U R2 U R2 U2 R' |
 
 ### Mnemonics
 
@@ -234,8 +279,7 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
 * Hdl:
     * 5 R-activities.
     * First is R2 and R' starts from 2nd. Also note R' at end
-    * D is first. This is the only one to have D among last 3.
-    * There is no single U/U'
+    * D is first. This is the only one to have D among last 3. And, there is no single U/U', when D is there.
     * D/U2 alternate
   ```
     R2 D
@@ -295,6 +339,9 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
          R'      F   7f
          R       F'  8f
     ```
+    * Dont forget its R'R in the End!
+    * Start with F, then you have 4 pair's of R-R'. The first 3 are R-R', last is R'-R.
+    * Its U'-U', U-F', U-U', F-F' for the pairs.
 
 ### Edges
 
