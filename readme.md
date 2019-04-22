@@ -16,7 +16,7 @@
 2. Get corner
 3. Get edge in 2nd layer.
 
-## Get Yellow Plus
+## Get Yellow Cross
 
 Algo: F U R U' R' F'
 ```
@@ -123,19 +123,19 @@ Possible options:
 
 So, if you have
 
-|  No  |  No Yellow Already  |  Name           |   Orient        |   Next step  |
-| ---- | ------------------- | --------------- | --------------- | -------------|
-|  1   |  1                  |  Regular fish   |    Std          |         (1)  |
-|  2   |  1                  |  Other fish     |    Std          | RgrFsh  (2)  |
-|  3   |  0                  |  Double Headlgt | Yellow on side  | RgrFsh  (2)  |
-|  4   |  0                  |  Chameleon car  | Yellow on side  | RgrFsh  (2)  |
-|  5   |  2                  |  HeadLight      | Hdl in front    | OtrFsh  (3)  |
-|  6   |  2                  |  Chameleon      | Yellow in LFT   | OtrFsh  (3)  |
-|  7   |  2                  |  Diagnol        | Yellow in LFT   | OthFsh  (3)  |
+|  No  |  No Yellow Already  |  Name           |   Orient        |   Next step  | Times to execute |
+| ---- | ------------------- | --------------- | --------------- | -------------| ---------------- |
+|  1   |  1                  |  Regular fish   |    Std          |              |   1              |
+|  2   |  1                  |  Other fish     |    Std          | RgrFsh       |   2              |
+|  3   |  0                  |  Double Headlgt | Yellow on side  | RgrFsh       |   2              |
+|  4   |  0                  |  Chameleon car  | Yellow on side  | RgrFsh       |   2              |
+|  5   |  2                  |  HeadLight      | Hdl in front    | OtrFsh       |   3              |
+|  6   |  2                  |  Chameleon      | Yellow in LFT   | OtrFsh       |   3              |
+|  7   |  2                  |  Diagnol        | Yellow in LFT   | OthFsh       |   3              |
 
 Basically, its always LFT corner of interest.
 * If 1 yellow, then yellow faces up
-* If 0 yellow, then yellow is on left side
+* If 0 yellow, then yellow is on left side (remember headlight on side, that's the case for Fridrich too)
 * If 2 yellow, then yellow is facing you
 
 ## Get Yellow Corners right
