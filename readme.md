@@ -9,6 +9,7 @@
 | Alternate beginner method where yellow cross is set right, w/o doing yellow face and corners are permuted rightly | http://en.lerubikscube.com/how-to-solve-rubiks-cube/#Step_5_in_how_to_solve_the_Rubiks_cube_edges_permutation |
 | Fridrich's first 2 layer explained best                                                                           | https://ruwix.com/the-rubiks-cube/advanced-cfop-fridrich/first-two-layers-f2l/                                |
 | Fridrich's 2-Step OLL explained best.                                                                             | http://loki.ist.unomaha.edu/~jtrimm/project/ollpll.html                                                       |
+| Fridrich's 2-Step PLL explained best                                                                              | https://play.google.com/store/apps/details?id=com.appstar.souvik_biswas.cube                                  |
 
 # Standard Moves
 
