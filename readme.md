@@ -1,3 +1,5 @@
+:toc:
+
 # Rubik Notes
 
 # References
@@ -481,3 +483,28 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
 * Swap E<->F, G<->H: M M U M M U M' U U M M U U M'
     * Mnemonic: Mu-Mu m'u uM-Um'
     * {1-Mu, 2-Mu, 3-uM} same as opp. there is mu' in between and Um' for 4th.
+
+# 5x5
+
+http://rubik.rthost.org/5x5x5_disparity_algorithms.htm
+
+1. Get the 3x3 faces.
+    a. First white
+    b. Then yellow
+    c. Then blue
+    d. Then red
+2. The last 2 should be done for the plus first.
+    a. Plus right.
+        i. Keep the target cross pieces on right side in F and U faces.
+        ii. Algo: Rr' F' Ll' Rr U Rr U' Ll Rr'
+                a. Mneomic: Its only Rr/Ll/F/U.
+                b. R-F-L, R-U-R, U-L-R
+                c. tow-inv-awy, away-reg-away, inv-tow-tow
+                  (Rr' towards) F' (Ll' away) (Rr away) U (Rr away) U' (Ll towards) (Rr' towards)
+
+    b Corners right
+        i. Rr U Rr' U Rr U U Rr'
+3. Now get edges right. 
+    a. Get the last 2 edges. There are 5 scenarios
+
+
