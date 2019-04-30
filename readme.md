@@ -489,22 +489,29 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
 http://rubik.rthost.org/5x5x5_disparity_algorithms.htm
 
 1. Get the 3x3 faces.
-    a. First white
-    b. Then yellow
-    c. Then blue
-    d. Then red
+    * First white
+    * Then yellow
+    * Then blue
+    * Then red
 2. The last 2 should be done for the plus first.
-    a. Plus right.
-        i. Keep the target cross pieces on right side in F and U faces.
-        ii. Algo: Rr' F' Ll' Rr U Rr U' Ll Rr'
-                a. Mneomic: Its only Rr/Ll/F/U.
-                b. R-F-L, R-U-R, U-L-R
-                c. tow-inv-awy, away-reg-away, inv-tow-tow
-                  (Rr' towards) F' (Ll' away) (Rr away) U (Rr away) U' (Ll towards) (Rr' towards)
-
+    * Plus right.
+        * Keep the target cross pieces on right side in F and U faces.
+        * Algo: Rr' F' Ll' Rr U Rr U' Ll Rr'
+            * Mneomic: Its only Rr/Ll/F/U.
+            * R-F-L, R-U-R, U-L-R
+            * tow-inv-awy, away-reg-away, inv-tow-tow
+        * Intuitive understanding of this algo
+            * Pull U-color to F-face. (R-towards)
+            * Save the F-color that came down on FU position by doing a F'
+            * Restore the pull. You gave away one F-color to U now!
+            * Push up F-face on Left side. You are giving one more F-color to U.
+            * Now do a U on top, so that your F-colors are on middle line.
+            * Push R-side up. Now the tgt-U-color comes to U-face.
+            * Do a U' so that this U comes to middle line and the 2 F-colors are on sides
+            * Restore both sides! Voila.
     b Corners right
         i. Rr U Rr' U Rr U U Rr'
-3. Now get edges right. 
+3. Now get edges right.
     a. Get the last 2 edges. There are 5 scenarios
 
 
