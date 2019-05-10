@@ -385,7 +385,7 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
 * Double Hdl:
     * Total of 6 Rs
     * It goes same as regular until R-U-R'-U-R
-    * Then instead of UU-R' as in regular, you have U'-R' (this finishes until regular), and one extra round R-U2-R'
+    * Then instead of UU-R' as in regular, you have U'-R' (this finishes until regular), and one extra round U-R-U2-R'
   ```
     R  U
     R' U
@@ -501,7 +501,7 @@ http://rubik.rthost.org/5x5x5_disparity_algorithms.htm
             * R-F-L, R-U-R, U-L-R
             * tow-inv-awy, away-reg-away, inv-tow-tow
         * Intuitive understanding of this algo
-            * Pull U-color to F-face. (R-towards)
+            * Pull down U-color to F-face. (R-towards)
             * Save the F-color that came down on FU position by doing a F'
             * Restore the pull. You gave away one F-color to U now!
             * Push up F-face on Left side. You are giving one more F-color to U.
@@ -509,9 +509,47 @@ http://rubik.rthost.org/5x5x5_disparity_algorithms.htm
             * Push R-side up. Now the tgt-U-color comes to U-face.
             * Do a U' so that this U comes to middle line and the 2 F-colors are on sides
             * Restore both sides! Voila.
-    b Corners right
-        i. Rr U Rr' U Rr U U Rr'
+    * Corners right
+        * Rr U Rr' U Rr U U Rr'
+        * Mnemonic: The standard algo. Yippee
 3. Now get edges right.
-    a. Get the last 2 edges. There are 5 scenarios
-
-
+    * Swap 2 edges: Algo: Ll' U2 Ll' U2 F2 Ll' F2 Rr U2 Rr' U2 (Ll')2
+        * Intuitive/Mnemonic:
+            * You are starting on UL side (F&B)                       FUR-1, BUR-2
+            * Ll' to find out.
+            * U2 moves it form UR to UL-side(F&B)              So its FUL-2, BUL-1
+            * Ll'(away) move from UL to BL-side(U&D)              its BUL-2, BDL-1
+            * U2 brings 2 alone to FUR(both are diag opp)             FUR-2, BDL-1
+            * F2 brings 2 to DL side (F&B)                            FDL-2, BDL-1
+            * Ll' brings both on FL side (U&D)                        FUL-2, FDL-1
+            * F2 moves from FL to FR side(U&D)                        FUR-1, FDR-2
+            * Rr moves from FR to UR side(F&B)                        BUR-1, FUR-2 (swapped at this point)
+            * U2 moves from UR to UL side(F&B)                        FUL-1, BUL-2
+            * Rr' to find out
+            * U2 moves from UL to UR side(F&B)                        FUR-2, BUR-1
+            * Ll'2 to find out.
+        * Kind of its:
+                * Ll' away
+            * R to L
+            * L to B
+            * split one so that its diag opp.
+            * again join them on DL-line
+            * D to F
+            * L to R
+            * R to U
+            * R to L
+                * Rr' (towards)
+            * L to R
+                * Ll2
+        * Front to back
+            * FUR-1, BUR-2    1 in front, 2 in back
+            * FUL-2, BUL-1    2 in front, 1 in back
+            * BUL-2, BDL-1    2 on top,   1 in back-bot
+            * FUR-2, BDL-1
+            * FDL-2, BDL-1    2 in front, 1 in back
+            * FUL-2, FDL-1    2 on top,   1 in bot
+            * FUR-1, FDR-2    1 on top,   2 in bot
+            * BUR-1, FUR-2    1 in back,   2 in front
+            * FUL-1, BUL-2
+            * FUR-2, BUR-1
+    * Flip one edge: Rr2 B2 U2 Ll U2 Rr' U2 Rr U2 F2 Rr F2 Ll' B2 Rr2
