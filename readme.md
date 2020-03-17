@@ -133,10 +133,10 @@ So, if you have
 |  3   |  0                  |  Double Headlgt | Yellow on side  | RgrFsh       |   2              |
 |  4   |  0                  |  Chameleon car  | Yellow on side  | RgrFsh       |   2              |
 |  5   |  2                  |  HeadLight      | Hdl in front    | OtrFsh       |   3              |
-|  6   |  2                  |  Chameleon      | Yellow in LFT   | OtrFsh       |   3              |
-|  7   |  2                  |  Diagnol        | Yellow in LFT   | OthFsh       |   3              |
+|  6   |  2                  |  Chameleon      | Yellow in LFU   | OtrFsh       |   3              |
+|  7   |  2                  |  Diagnol        | Yellow in LFU   | OthFsh       |   3              |
 
-Basically, its always LFT corner of interest.
+Basically, its always LFU corner of interest.
 * If 1 yellow, then yellow faces up
 * If 0 yellow, then yellow is on left side (remember headlight on side, that's the case for Fridrich too)
 * If 2 yellow, then yellow is facing you
@@ -329,10 +329,10 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
 * Case of having both corner and edge on top layer.
     * The corner's top color matches the edge's top color
         * If they are touching-touching the right way, its the easy case.
-        * If they are not touching-touching, put the corner down, and orient the
-                edge to arrive at its touching-touching position.
-            * You will have to move the white to corner of other side(side not on top),
-                and make the edge piece go to the non-involed side.
+        * If they are not touching-touching
+            * Bring the corner first atop its corner position.
+            * Move the corner to the side opp to the color on top.
+            * Put corner down. Orient the edge so that you get the touching-touching position.
         * If they are touching-touching the wrong way:
             * Make the corner come to the top color's side. The edge is hence on the
                 non-involved side.
@@ -342,7 +342,16 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
             * Bring edge to its desired position for touching-touching.
     * Corner's top is opposite to Edge's.
         * You target simple roll-over.
-        * Put corner-down. Aligh edge to its right spot.
+        * You can have either of
+            * edge in right place - the simple rollover.
+            * edge not touching
+            * edge touching on either side
+        * Start with cornet atop its position
+        * In all of the above, put corner-down. Aligh edge to its right spot.
+            * In edge not touching, you can choose to put corner down in any side.
+            * In touching touching case, you will have to push in on the side where
+              edge is touching, so that it goes out of way when you put corner down.
+            * In all 3 cases, you will have to just move the edge 90-degress.
     * White on top
         * Align edge with its side.
             * Corner not-touching or corner touching and is in target-location.
@@ -360,22 +369,45 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
                 * You are in touching-touching case.
 * If edge is on top and corner is in bottom layer.
     * Try to shoot for easy-case as you move up.
-        * If white is down. target simple rollover.
-        * If white on side, touching or simple rollover. (depends on edge color on top)
-        * sometimes touching is not possible, in that case, shoot for white-on-top
-* If edge is in middle, again try to get into one of the easy cases.
+        * If white is down, it will never come up. So shoot for diff color
+          to come on top and hence a simple rollover.
+        * if white is on side, you can shoot for white to be on top. Just keep
+          the edge on a non-touching way so that you can shoot for a simple
+          touching-touching later.
+          (Actually, if u can manage it you can shoot for touching-touching
+           or simple-rollover directly, but its possible and not possible.
+           So the time taken to check and decide is same as doing an extra
+           step)
+* If edge is in middle:
+    * corner is on top - again try to get into one of the easy cases.
+    * corner is down, take up another corner and come to this last. Chances are
+      it will be gone away. Your worst case, is when this is the last corner
+      and it is not aligned. Just bring it up and work on it.
+
+Summary for white and edge both on top cases
+* Diff color - 1 straightforward(simple rollover). Other 3 all easy. Shoot for simple-rollover
+* Same color - Remember: Corner goes down.
+*              1 straightforward(touching-touching).
+               2 (both aren't touching) one-step away. Shoot for touching-touching
+               1 (touching the wrong away). two-step away. Corner down on both sides.
+* White top  - Remember: Aligh edge and move it away (2-step case starts other way, but
+                         second-steps is this)
+               2 straightforward (one step away) - Shoot for touching-touching
+               1 straightforward (one step away) - touching-touching. shoot for rollover
+               1 two-steps away. Shoot for touching touching.
+               
 
 ## OLL
 
-|  Case             |  algo                     | Start-pos         |   Reverse             |
-| ----------------- | ------------------------- | ----------------- | --------------------- |
-| Regular fish      | R  U  R' U  R  U  U  R'   | Yellow up in TFL  |   R U2 R' U' R U' R'  |
-| Other   fish      | R' U' R  U' R' U' U' R    | Yellow up in TBL  |   R' U2 R U R' U R    |
-| Headlights        | R2 D R' U2 R D' R' U2 R'  | Lights in F side  |   R U2 R D R' U2 R D' R2 |
-| Chameleon         | X' R U R' D R U' R' D'    | Like Hdlght, and Yellow face in F | (see diagnol) |
-| Diagnals          | X' D R U R' D' R U' R'    | Yellow side at TFL,L side         | (see chameleon) |
-| Double headlights | R U R' U R U' R' U R U2 R'| Yellow on sides   |  R U2 R' U' R U R' U' R U' R' |
-| Chameleon car     | R U2 R2 U' R2 U' R2 U2 R  | Lights on sides   |  R' U2 R2 U R2 U R2 U2 R' |
+| Case              | algo                       | Start-pos                         | Reverse                      |
+| ----------------- | -------------------------  | -----------------                 | ---------------------        |
+| Regular fish      | R  U  R' U  R  U  U  R'    | Yellow up in TFL                  | R U2 R' U' R U' R'           |
+| Other   fish      | R' U' R  U' R' U' U' R     | Yellow up in TBL                  | R' U2 R U R' U R             |
+| Headlights        | R2 D R' U2 R D' R' U2 R'   | Lights in F side                  | R U2 R D R' U2 R D' R2       |
+| Chameleon         | X' R U R' D R U' R' D'     | Like Hdlght, and Yellow face in F | (see diagnol)                |
+| Diagnals          | X' D R U R' D' R U' R'     | Yellow side at TFL,L side         | (see chameleon)              |
+| Double headlights | R U R' U R U' R' U R U2 R' | Yellow on sides                   | R U2 R' U' R U R' U' R U' R' |
+| Chameleon car     | R U2 R2 U' R2 U' R2 U2 R   | Lights on sides                   | R' U2 R2 U R2 U R2 U2 R'     |
 
 ### Mnemonics
 
