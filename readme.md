@@ -138,7 +138,7 @@ So, if you have
 
 Basically, its always LFU corner of interest.
 * If 1 yellow, then yellow faces up
-* If 0 yellow, then yellow is on left side (remember headlight on side, that's the case for Fridrich too)
+* If 0 yellow, then yellow is on left side (remember double-headlight on side, that's the case for Fridrich too)
 * If 2 yellow, then yellow is facing you
 
 ## Get Yellow Corners right
@@ -385,35 +385,40 @@ W |   |   |   | |R| |                       |   |   |   | |R| |
       and it is not aligned. Just bring it up and work on it.
 
 Summary for white and edge both on top cases
-* Diff color - 1 straightforward(simple rollover). Other 3 all easy. Shoot for simple-rollover
-* Same color - Remember: Corner goes down.
-*              1 straightforward(touching-touching).
-               2 (both aren't touching) one-step away. Shoot for touching-touching
-               1 (touching the wrong away). two-step away. Corner down on both sides.
-* White top  - Remember: Aligh edge and move it away (2-step case starts other way, but
-                         second-steps is this)
-               2 straightforward (one step away) - Shoot for touching-touching
-               1 straightforward (one step away) - touching-touching. shoot for rollover
-               1 two-steps away. Shoot for touching touching.
-               
+
+What        | To target         | Immd step   | Sub-situation     | comment
+----------- | -----------       | -------     | ---------         | --------
+Diff Color  | Rollover          | Corner Down | not-touching good | Direct
+Diff Color  | Rollover          | Corner Down | not-touching      | you can put corner down on either side. Depending on side, move the edge piece.
+Diff Color  | Rollover          | Corner Down | touching-1        | You have exactly one side to turn to, to get edge away. Figure out right edge positition.
+Diff Color  | Rollover          | Corner Down | touching-2        | see above.
+Same Color  | Touching-Touching | Corner Down | touching-good     | Direct
+Same Color  | Touching-Touching | Corner Down | not-touching-1    | Move the corner by pusing the thumb on white. Get edge to touch.
+Same Color  | Touching-Touching | Corner Down | not-touching-2    | see above.
+Same Color  | Touching-Touching | Corner Down | touching-bad   [2]| Move thumb by pushing against white. Edge 180. restore corner. now corner 180 and down on that corner. Get edge touching.
+White Top   | Touching-Touching | Edge Align  | crnr-not-tch-1    | Edge down and bring corner atop edge.
+White Top   | Touching-Touching | Edge Align  | crnr-not-tch-2    | Edge down and bring corner atop edge.
+White Top   | Rollover          | Edge Align  | crnr-tchng-good   | Edge down and move corner 180.
+White Top   | Touching-Touching | Edge Align  | crnr-tchng-bad [2]| Corner 180,down, edge 180. corner up. Edge down, corner atop.
+
 
 ## OLL
 
-| Case              | algo                       | Start-pos                         | Reverse                      |
-| ----------------- | -------------------------  | -----------------                 | ---------------------        |
-| Regular fish      | R  U  R' U  R  U  U  R'    | Yellow up in TFL                  | R U2 R' U' R U' R'           |
-| Other   fish      | R' U' R  U' R' U' U' R     | Yellow up in TBL                  | R' U2 R U R' U R             |
-| Headlights        | R2 D R' U2 R D' R' U2 R'   | Lights in F side                  | R U2 R D R' U2 R D' R2       |
-| Chameleon         | X' R U R' D R U' R' D'     | Like Hdlght, and Yellow face in F | (see diagnol)                |
-| Diagnals          | X' D R U R' D' R U' R'     | Yellow side at TFL,L side         | (see chameleon)              |
-| Double headlights | R U R' U R U' R' U R U2 R' | Yellow on sides                   | R U2 R' U' R U R' U' R U' R' |
-| Chameleon car     | R U2 R2 U' R2 U' R2 U2 R   | Lights on sides                   | R' U2 R2 U R2 U R2 U2 R'     |
+| Case              | algo                       | Start-pos                                | Reverse                      |
+| ----------------- | -------------------------  | -----------------                        | ---------------------        |
+| Regular fish      | R  U  R' U  R  U  U  R'    | Ylw Uside in UFL, Ylw Fside in UFR       | R U2 R' U' R U' R'           |
+| Other   fish      | R' U' R  U' R' U' U' R     | Ylw Uside in UBL, Ylw Fside in UFL       | R' U2 R U R' U R             |
+| Headlights        | R2 D R' U2 R D' R' U2 R'   | Lights in F side                         | R U2 R D R' U2 R D' R2       |
+| Chameleon         | X' R U R' D R U' R' D'     | Yellow face in F, Eyes at LFD,RFD        | (see diagnol)                |
+| Diagnals          | X' D R U R' D' R U' R'     | Ylw Fc in F, Diag FUL to FDR, Ylw at LFD | (see chameleon)              |
+| Double headlights | R U R' U R U' R' U R U2 R' | Yellow on sides                          | R U2 R' U' R U R' U' R U' R' |
+| Chameleon car     | R U2 R2 U' R2 U' R2 U2 R   | Lights on sides                          | R' U2 R2 U R2 U R2 U2 R'     |
 
 ### Mnemonics
 
 * Regular Fish : regular!
 * Other   Fish : R direction start with towards you, instead of against you, and its U' instead of U
-* Chameleon/Diagnol: Diagnol starts with D. Its RUR' - D - RU'R' - D'
+* Chameleon/Diagnol: Diagnol starts with D. Its D - RUR' - D/D' - RU'R' - D'
 * Double Hdl:
     * Total of 6 Rs
     * It goes same as regular until R-U-R'-U-R
@@ -444,10 +449,10 @@ Summary for white and edge both on top cases
     * Remember symmetry - 3 R2 sandwiched between R. 2 U' sandwiched between U2.
         * The U2 is outer, and R2 is inner.
   ```
-    R  U2
+    R  U'2
     R2 U'
     R2 U'
-    R2 U2
+    R2 U'2
     R
   ```
 
