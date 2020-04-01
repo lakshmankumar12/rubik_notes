@@ -422,7 +422,8 @@ White Top   | Touching-Touching | Edge Align  | crnr-tchng-bad [2]| Corner 180,d
 * Double Hdl:
     * Total of 6 Rs
     * It goes same as regular until R-U-R'-U-R
-    * Then instead of UU-R' as in regular, you have U'-R' (this finishes until regular), and one extra round U-R-U2-R'
+    * Then instead of UU-R' as in regular, you have U'-R' (this finishes until regular),
+    * and one extra round U-R-U2-R'. If you do the U-R, you will see the U2-R' falling in place.
   ```
     R  U
     R' U
@@ -433,11 +434,11 @@ White Top   | Touching-Touching | Edge Align  | crnr-tchng-bad [2]| Corner 180,d
   ```
 * Hdl:
     * 5 R-activities.
-    * First is R2 and R' starts from 2nd. Also note R' at end
+    * There is one R in middle, but its R' otherwise.
     * D is first. This is the only one to have D among last 3. And, there is no single U/U', when D is there.
     * D/U2 alternate
   ```
-    R2 D
+    R'2 D
     R'   U2
     R  D'
     R'   U2
@@ -491,7 +492,7 @@ White Top   | Touching-Touching | Edge Align  | crnr-tchng-bad [2]| Corner 180,d
          R'      F'  4f
          R   U       5u
          R'  U'      6
-         R'      F   7f
+         R'      F   7f (after this point you might follow how it fits back)..
          R       F'  8f
     ```
     * Dont forget its R'R in the End!
@@ -510,16 +511,30 @@ White Top   | Touching-Touching | Edge Align  | crnr-tchng-bad [2]| Corner 180,d
   |   | H |   |
   +---+---+---+
 ```
+* Remember M is middle towards you.
+    * In short notiation remember cap for M2, U2
 * Cycle E->G->H:  M M U' M U U M' U' M M
 * Cycle E->H->G:  M M U  M U U M' U  M M
-    * Mnemonic: Mu-mUm'-uM
-    * cap for M2, U2, M2
     * {Mu, uM}'s u dir is opp to how you want.
+    * Mnemonic: Mu-mUm'-uM
+        * Mu/Mu' is the same start for everything.
+        * Now that you did a u, do a m next. Then U. Then m'.
+        * Finish with u/u', M. This part you will be able to see fall in place.
 * Swap F<->H, E<->G: M M U M M U      U M M U M M
-    * Mnemonic: Mu-Mu-uM-uM
+    * Mnemonic: Mu-MUM-uM
+        * Symmetric case, symmetric moves.
+        * Start with Mu. That's the same for everything
+        * Now that you did a u, do MUM next.
+        * Finish with uM. (This will fall in place as you see.)
 * Swap E<->F, G<->H: M M U M M U M' U U M M U U M'
     * Mnemonic: Mu-Mu m'u uM-Um'
-    * {1-Mu, 2-Mu, 3-uM} same as opp. there is mu' in between and Um' for 4th.
+           (or) Mu-Mu m' UMU m'
+        * Start with Mu. That's same for everything.
+        * Repeat this again.
+        * Now that u did a u, do a m'.
+        * Do a UMU (this is otherway for MUM in second case - just for remembering sake)
+        * After this you will see things fall in place. Do a m' (and actually a U too)
+        * Note that both individual m' are away from you.
 
 # 5x5
 
@@ -590,3 +605,41 @@ http://rubik.rthost.org/5x5x5_disparity_algorithms.htm
             * FUL-1, BUL-2
             * FUR-2, BUR-1
     * Flip one edge: Rr2 B2 U2 Ll U2 Rr' U2 Rr U2 F2 Rr F2 Ll' B2 Rr2
+
+# 4x4
+
+* Finish white face first
+* finish yellow opp to white
+* Finish blue face.
+* Now pick the white/blue/red corner piece. Aligh the white on this corner on white face.
+  This will help you determine where red should go.
+  In std config, if white on left, yellow on right, red is below blue.
+* Finish all other sides.
+* The last 2 are either off 2-2 or 3-1. 2-2 is easy. They are each on st. lines.
+  For 3-1, just use the std Rr-U-Rr'-U-Rr-U2-Rr' like in 5x5.
+
+* now, bring the 2 edges same. For the very last 2 edges.
+   Dd R F' U R'F Dd'
+
+* Disparity.
+* At making yellow plus:
+    * If you get an impossible combo - u see one 1 or 3 edges in.
+        * note r is just the inner r.
+        * r2 U2 r2 U2 r U2 r U2 r' U2 B2 U' r' U B2 U' r U' 
+        * Mnemonic
+            r2 U2 r2 U2
+            r  U2 r  U2
+            r' U2
+            B2
+            U' r' U
+            B2
+            U' r  U'
+* At final fixing of edges.
+    * if u want to realign 2 edges between L and F.
+    * r2 U2 r2 Uu2 r2 Uu2 U2
+    * Mnemonic
+        r2 U2
+        r2 Uu2
+        r2 Uu2
+        U2
+
