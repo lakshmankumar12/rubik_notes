@@ -476,3 +476,14 @@ Ll' U2 Ll' U2 F2 Ll' F2 Rr U2 Rr' U2 (Ll')2
    Then Ll2, you will see Ll's aligning.
 
 Ll' U2 Ll' U2 F2 Ll' F2 Rr U2 Rr' U2 Ll2
+
+Mnemonic
+
+* Start          Top-Right
+* Ll'            Uninvolved
+* U2  Ll'        Back Left
+* U2  F2  Ll'    Face Left
+* F2  Rr  U2     Top  Left (via top-right)
+* Rr'            Uninvolved towards
+* U2             To final position
+* Ll2            Uninvoled restore.

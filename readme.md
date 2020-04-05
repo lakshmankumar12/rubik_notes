@@ -547,20 +547,9 @@ http://rubik.rthost.org/5x5x5_disparity_algorithms.htm
     * Then red
 2. The last 2 should be done for the plus first.
     * Plus right.
-        * Keep the target cross pieces on right side in F and U faces.
-        * Algo: Rr' F' Ll' Rr U Rr U' Ll Rr'
-            * Mneomic: Its only Rr/Ll/F/U.
-            * R-F-L, R-U-R, U-L-R
-            * tow-inv-awy, away-reg-away, inv-tow-tow
-        * Intuitive understanding of this algo
-            * Pull down U-color to F-face. (R-towards)
-            * Save the F-color that came down on FU position by doing a F'
-            * Restore the pull. You gave away one F-color to U now!
-            * Push up F-face on Left side. You are giving one more F-color to U.
-            * Now do a U on top, so that your F-colors are on middle line.
-            * Push R-side up. Now the tgt-U-color comes to U-face.
-            * Do a U' so that this U comes to middle line and the 2 F-colors are on sides
-            * Restore both sides! Voila.
+        * Keep the ones on U-face on B, F-face on R.
+        * Rr-U-Rr' will align them.
+        * See picture at 5x5_flip_middle.txt
     * Corners right
         * Rr U Rr' U Rr U U Rr'
         * Mnemonic: The standard algo. Yippee
@@ -616,7 +605,13 @@ http://rubik.rthost.org/5x5x5_disparity_algorithms.htm
   In std config, if white on left, yellow on right, red is below blue.
 * Finish all other sides.
 * The last 2 are either off 2-2 or 3-1. 2-2 is easy. They are each on st. lines.
-  For 3-1, just use the std Rr-U-Rr'-U-Rr-U2-Rr' like in 5x5.
+  For 3-1, keep it like
+        * in U Face: »G-O
+                     »O-O
+             F Face:  G-G«
+                      G-O«
+        * Now, just pull the G-O down. This wil alight with the G-O below.
+        * Restore.
 
 * now, bring the 2 edges same. For the very last 2 edges.
    Dd R F' U R'F Dd'
@@ -635,7 +630,7 @@ http://rubik.rthost.org/5x5x5_disparity_algorithms.htm
             B2
             U' r  U'
 * At final fixing of edges.
-    * if u want to realign 2 edges between L and F.
+    * This will swap 1 pair of opp edges (F and B)
     * r2 U2 r2 Uu2 r2 Uu2 U2
     * Mnemonic
         r2 U2

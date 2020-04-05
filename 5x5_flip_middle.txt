@@ -587,3 +587,27 @@ Algo: Rr2 B2 U2 Ll U2 Rr' U2 Rr U2 F2 Rr F2 Ll' B2 Rr
 
 Rr2 B2 U2 Ll U2 Rr' U2 Rr U2 F2 Rr F2 Ll' B2 Rr2
 
+
+Mnemonic
+
+* start 3 on FU edge.
+* Rr2 - B2 - U2      .. Bring on top-right.
+* Ll - U2 - Rr' - U2 .. Uninvolved 2 towards and restore back on top-right
+* Rr - U2 - F2  - Rr .. Bring to face-right
+* F2 - Ll'           .. Bring to top-left (2 guys come to position)
+* B2 - Rr2           .. 3rd one alone to its final pos.
+
+*******************************
+
+
+5x5 last 2 edge
+                      U^            U^
+    x F x       x F x         x U x         x U x
+    U U U       U U U         U U F         U U U
+    x U x       x U x         x U x         x U x
+    -----       -----         -----         -----
+    x F x       x F x         x F x         x F x
+    F F U       F F B         F F B         F F F
+    x F x       x F x         x F x         x F x
+
+    Start       R-away          U           R-towards
