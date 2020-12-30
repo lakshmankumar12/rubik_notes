@@ -206,6 +206,13 @@ F F U L R' F F L' R U F F
 
 ## white cross.
 
+* Dont bother about the alignment immediately.
+* Just make sure each colors are relative to each other.
+* Remember, if white is on Left, Blue on Top, Then Red is below.
+* Easy positions
+    * Edge on bottom face, and white facing down.
+        * Just do a F2 and it comes up. You can align it before doing the F2.
+
 
 ## Getting 2nd layer and white corners in one shot.
 
@@ -340,18 +347,23 @@ White Top   | Touching-Touching | Edge Align  | crnr-tchng-bad [2]| Corner 180,d
 | Chameleon         | X' R U R' D R U' R' D'     | Yellow face in F, Eyes at LFD,RFD        | (see diagnol)                |
 | Diagnals          | X' D R U R' D' R U' R'     | Ylw Fc in F, Diag FUL to FDR, Ylw at LFD | (see chameleon)              |
 | Double headlights | R U R' U R U' R' U R U2 R' | Yellow on sides                          | R U2 R' U' R U R' U' R U' R' |
-| Chameleon car     | R U2 R2 U' R2 U' R2 U2 R   | Lights on sides                          | R' U2 R2 U R2 U R2 U2 R'     |
+| Chameleon car     | R U2 R2 U' R2 U' R2 U2 R   | Car lights on L-side.                    | R' U2 R2 U R2 U R2 U2 R'     |
 
 ### Mnemonics
 
 * Regular Fish : regular!
+    * position - the top yellow corner is in L/F.
 * Other   Fish : R direction start with towards you, instead of against you, and its U' instead of U
+    * position - the top yellow corner is in L/B. (Or in L/F, yellow faces you.)
 * Chameleon/Diagnol: Diagnol starts with D. Its D - RUR' - D/D' - RU'R' - D'
+    * Diagnoal Position: One of the diagnol yellow is on U-face at F/R corner.
+    * Chameleon Position: Face chameleon eyes on L/R and the flip.
 * Double Hdl:
     * Total of 6 Rs
     * It goes same as regular until R-U-R'-U-R
     * Then instead of UU-R' as in regular, you have U'-R' (this finishes until regular),
     * and one extra round U-R-U2-R'. If you do the U-R, you will see the U2-R' falling in place.
+        * Position: The lights are facing side - L/R
   ```
     R  U
     R' U
@@ -365,6 +377,7 @@ White Top   | Touching-Touching | Edge Align  | crnr-tchng-bad [2]| Corner 180,d
     * There is one R in middle, but its R' otherwise.
     * D is first. This is the only one to have D among last 3. And, there is no single U/U', when D is there.
     * D/U2 alternate
+        * Position: headlight is towards you.
   ```
     R'2 D
     R'   U2
@@ -374,9 +387,11 @@ White Top   | Touching-Touching | Edge Align  | crnr-tchng-bad [2]| Corner 180,d
   ```
 * Chameleon Car:
     * 5 R-activites. U' all the way. U'2 first and last U's in between.
-    * There is no R' and U at all.
+        * There is no R' and U at all.
+        * May be remember rui (r and u-invert)
     * Remember symmetry - 3 R2 sandwiched between R. 2 U' sandwiched between U2.
         * The U2 is outer, and R2 is inner.
+    * Position: car light is on L side.
   ```
     R  U'2
     R2 U'
