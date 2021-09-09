@@ -168,7 +168,7 @@ F F U L R' F F L' R U F F
 # The other standard move.
 
 * Same as regular until yellow cross (FRU-RUF)
-* Now instead of targeting yellow-face, make sure the yellow edges are rightly in place with their color
+* Now instead of targeting yellow-face, make sure the yellow (middle) edges are rightly in place with their color
     * you either have it all aligned or 2 adjacents ones are okay and other two aren't. No other possibility.
     * Keep the 2 aligned on R and B sides and do R-U-R'-U-R-U2-R'
     * This will align all yellow edges
@@ -497,45 +497,7 @@ http://rubik.rthost.org/5x5x5_disparity_algorithms.htm
         * Rr U Rr' U Rr U U Rr'
         * Mnemonic: The standard algo. Yippee
 3. Now get edges right.
-    * Swap 2 edges: Algo: Ll' U2 Ll' U2 F2 Ll' F2 Rr U2 Rr' U2 (Ll')2
-        * Intuitive/Mnemonic:
-            * You are starting on UL side (F&B)                       FUR-1, BUR-2
-            * Ll' to find out.
-            * U2 moves it form UR to UL-side(F&B)              So its FUL-2, BUL-1
-            * Ll'(away) move from UL to BL-side(U&D)              its BUL-2, BDL-1
-            * U2 brings 2 alone to FUR(both are diag opp)             FUR-2, BDL-1
-            * F2 brings 2 to DL side (F&B)                            FDL-2, BDL-1
-            * Ll' brings both on FL side (U&D)                        FUL-2, FDL-1
-            * F2 moves from FL to FR side(U&D)                        FUR-1, FDR-2
-            * Rr moves from FR to UR side(F&B)                        BUR-1, FUR-2 (swapped at this point)
-            * U2 moves from UR to UL side(F&B)                        FUL-1, BUL-2
-            * Rr' to find out
-            * U2 moves from UL to UR side(F&B)                        FUR-2, BUR-1
-            * Ll'2 to find out.
-        * Kind of its:
-                * Ll' away
-            * R to L
-            * L to B
-            * split one so that its diag opp.
-            * again join them on DL-line
-            * D to F
-            * L to R
-            * R to U
-            * R to L
-                * Rr' (towards)
-            * L to R
-                * Ll2
-        * Front to back
-            * FUR-1, BUR-2    1 in front, 2 in back
-            * FUL-2, BUL-1    2 in front, 1 in back
-            * BUL-2, BDL-1    2 on top,   1 in back-bot
-            * FUR-2, BDL-1
-            * FDL-2, BDL-1    2 in front, 1 in back
-            * FUL-2, FDL-1    2 on top,   1 in bot
-            * FUR-1, FDR-2    1 on top,   2 in bot
-            * BUR-1, FUR-2    1 in back,   2 in front
-            * FUL-1, BUL-2
-            * FUR-2, BUR-1
+    * Swap 2 edges:  see 5x5_swap_edges.txt
     * Flip one edge: Rr2 B2 U2 Ll U2 Rr' U2 Rr U2 F2 Rr F2 Ll' B2 Rr2
 
 # 4x4

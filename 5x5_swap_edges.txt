@@ -1,3 +1,81 @@
+* Swap 2 edges: Algo:
+Ll' U2 Ll' U2 F2 Ll' F2 Rr U2 Rr' U2 (Ll')2
+
+
+      +-----------X---+           +------------X--+                +--X------------+
+       \               \           \               \                \               \
+        \               \           \               \                \               \
+         \               \           \               \                \               \
+          +-----------X---+           +-----------X---+                +--X------------+
+          |               |    *      |               |       *        |               |
+          |               |           |               |                |               |
+          |               |           |               |                |               |
+          |               |           |               |                |               |
+          +---------------+           +---------------+                +---------------+
+               Begin                        Ll' (away)                        U2
+                                           (unrelated)
+
+    X +--X------------+         X +---------------+                +---------------+
+    V  \               \        V  \               \                \               \
+        \               \           \               \                \               \
+         \               \           \               \                \               \
+          +---------------+           +-----------X---+                +---------------+
+          |               |    *      |               |                |               |
+          |               |  (back    |               |                |               |
+          |               |   left)   |               |                |               |
+          |               |           |               |                |               |
+          +---------------+           +---------------+                +--X------------+
+               Ll'(away)                    U2                                F2
+
+      +---------------+           +---------------+                +------------X--+
+       \               \           \               \                \               \
+        \               \           \               \                \               \
+         \               \           \               \                \               \
+          +--X------------+           +-----------X---+                +-----------X---+
+          |               |           |               |                |               |
+          |               |    *      |               |                |               |
+          |               |  (face    |               |                |               |
+          |               |   left)   |               |                |               |
+          +--X------------+           +-----------X---+                +---------------+
+               Ll'(away)                    F2                                Rr
+
+      +--X------------+           +---X-----------+                +------------X--+
+       \               \           \               \                \               \
+        \               \           \               \                \               \
+         \               \           \               \                \               \
+          +--X------------+           +--X------------+                +-----------X---+
+          |               |   *       |               |     *          |               |
+          |               |  (top     |               |                |               |
+          |               |   left)   |               |                |               |
+          |               |           |               |                |               |
+          +---------------+           +---------------+                +---------------+
+               U2                           Rr'(towards)                      U2
+                                    unrelated, you will see
+                                      The Rr's aligning
+
+   Then Ll2, you will see Ll's aligning.
+
+Ll' U2 Ll' U2 F2 Ll' F2 Rr U2 Rr' U2 Ll2
+
+Mnemonic
+
+* Start          Top-Right
+* Ll'            Uninvolved (away)
+* U2  Ll'        Back Left
+* U2  F2  Ll'    Face Left  (Bonus: Notice Ll' as 1st/2nd/3rd in the substeps)
+* F2  Rr  U2     Top  Left (via top-right)
+* Rr'            Uninvolved towards
+* U2             To final position
+* Ll2            Uninvoled restore.
+
+
+
+**********
+
+
+Old:
+
+
 * Swap 2 edges: Algo: Ll' U2 Ll' U2 F2 Ll' F2 Rr U2 Rr' U2 (Ll')2
 
 You have
@@ -418,72 +496,42 @@ U2
 
 ******************
 
-* Swap 2 edges: Algo:
-Ll' U2 Ll' U2 F2 Ll' F2 Rr U2 Rr' U2 (Ll')2
-
-
-      +-----------X---+           +------------X--+                +--X------------+
-       \               \           \               \                \               \
-        \               \           \               \                \               \
-         \               \           \               \                \               \
-          +-----------X---+           +-----------X---+                +--X------------+
-          |               |           |               |                |               |
-          |               |           |               |                |               |
-          |               |           |               |                |               |
-          |               |           |               |                |               |
-          +---------------+           +---------------+                +---------------+
-               Begin                        Ll' (away)                        U2
-                                           (unrelated)
-
-    X +--X------------+         X +---------------+                +---------------+
-    V  \               \        V  \               \                \               \
-        \               \           \               \                \               \
-         \               \           \               \                \               \
-          +---------------+           +-----------X---+                +---------------+
-          |               |           |               |                |               |
-          |               |           |               |                |               |
-          |               |           |               |                |               |
-          |               |           |               |                |               |
-          +---------------+           +---------------+                +--X------------+
-               Ll'(away)                    U2                                F2
-
-      +---------------+           +---------------+                +------------X--+
-       \               \           \               \                \               \
-        \               \           \               \                \               \
-         \               \           \               \                \               \
-          +--X------------+           +-----------X---+                +-----------X---+
-          |               |           |               |                |               |
-          |               |           |               |                |               |
-          |               |           |               |                |               |
-          |               |           |               |                |               |
-          +--X------------+           +-----------X---+                +---------------+
-               Ll'(away)                    F2                                Rr
-
-      +--X------------+           +---X-----------+                +------------X--+
-       \               \           \               \                \               \
-        \               \           \               \                \               \
-         \               \           \               \                \               \
-          +--X------------+           +--X------------+                +-----------X---+
-          |               |           |               |                |               |
-          |               |           |               |                |               |
-          |               |           |               |                |               |
-          |               |           |               |                |               |
-          +---------------+           +---------------+                +---------------+
-               U2                           Rr'(towards)                      U2
-                                    unrelated, you will see
-                                      The Rr's aligning
-
-   Then Ll2, you will see Ll's aligning.
-
-Ll' U2 Ll' U2 F2 Ll' F2 Rr U2 Rr' U2 Ll2
-
-Mnemonic
-
-* Start          Top-Right
-* Ll'            Uninvolved
-* U2  Ll'        Back Left
-* U2  F2  Ll'    Face Left
-* F2  Rr  U2     Top  Left (via top-right)
-* Rr'            Uninvolved towards
-* U2             To final position
-* Ll2            Uninvoled restore.
+    * Swap 2 edges: Algo: Ll' U2 Ll' U2 F2 Ll' F2 Rr U2 Rr' U2 (Ll')2
+        * Intuitive/Mnemonic:
+            * You are starting on UL side (F&B)                       FUR-1, BUR-2
+            * Ll' to find out.
+            * U2 moves it form UR to UL-side(F&B)              So its FUL-2, BUL-1
+            * Ll'(away) move from UL to BL-side(U&D)              its BUL-2, BDL-1
+            * U2 brings 2 alone to FUR(both are diag opp)             FUR-2, BDL-1
+            * F2 brings 2 to DL side (F&B)                            FDL-2, BDL-1
+            * Ll' brings both on FL side (U&D)                        FUL-2, FDL-1
+            * F2 moves from FL to FR side(U&D)                        FUR-1, FDR-2
+            * Rr moves from FR to UR side(F&B)                        BUR-1, FUR-2 (swapped at this point)
+            * U2 moves from UR to UL side(F&B)                        FUL-1, BUL-2
+            * Rr' to find out
+            * U2 moves from UL to UR side(F&B)                        FUR-2, BUR-1
+            * Ll'2 to find out.
+        * Kind of its:
+                * Ll' away
+            * R to L
+            * L to B
+            * split one so that its diag opp.
+            * again join them on DL-line
+            * D to F
+            * L to R
+            * R to U
+            * R to L
+                * Rr' (towards)
+            * L to R
+                * Ll2
+        * Front to back
+            * FUR-1, BUR-2    1 in front, 2 in back
+            * FUL-2, BUL-1    2 in front, 1 in back
+            * BUL-2, BDL-1    2 on top,   1 in back-bot
+            * FUR-2, BDL-1
+            * FDL-2, BDL-1    2 in front, 1 in back
+            * FUL-2, FDL-1    2 on top,   1 in bot
+            * FUR-1, FDR-2    1 on top,   2 in bot
+            * BUR-1, FUR-2    1 in back,   2 in front
+            * FUL-1, BUL-2
+            * FUR-2, BUR-1
