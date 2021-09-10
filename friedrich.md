@@ -2,15 +2,17 @@
 
 # Summary table
 
-Both are in place, both to flip               | Algo (270 corner)  | algo: F U F U'  ..  L' U L .. F2  (white should be on side)
-Both are in place, edge ok, corner flip       | RuRuRuuR           | F2 U2, and then R-U-R'-U-R-U2-R   (white should be on side)
-Both are in place, edge flip, corner ok       | fur-fru            | fur-fru..  F2-U2-R' F2-R-U2 F'-U-F
-Edge in place, white-on-side, edge ok/not-ok  | W.Down             | [U] (white on f-face). F(white-down), U/U', F' (touching/rollover)
-Edge in place, white top, edge-aligned        | FUL/behind-forward | [U2] F'-U-L'  U' L-U'-F
-Edge in place, white top, edge-not aligned    | TT already         | Touching-touching already .. F'-U-F R-U2-R'
-Corner in place, aligned                      | Orig Slow          | [U] R U' R' (tt at this point) U' F' U F
-Corner in place, white-facing, edge on F-side | Intuitive (rollov) | F'-U'-F (rollover) U-F'-U'-F (do the rollover)
-Corner in place, white-facing, edge on R-side | TT with the R2 move| R-U' (touching-touching) R2(bring-to-F-face) F-R-F'(restore-R)
+| Situation                                     | Mnenomic            | Algo                                                               |
+| --------------                                | -----------------   | ----                                                               |
+| Both are in place, both to flip               | Algo (270 corner)   | algo: F U F U'  ..  L' U L .. F2  (white should be on side)        |
+| Both are in place, edge ok, corner flip       | RuRuRuuR            | F2 U2, and then R-U-R'-U-R-U2-R   (white should be on side)        |
+| Both are in place, edge flip, corner ok       | fur-fru             | fur-fru..  F2-U2-R' F2-R-U2 F'-U-F                                 |
+| Edge in place, white-on-side, edge ok/not-ok  | W.Down              | [U] (white on f-face). F(white-down), U/U', F' (touching/rollover) |
+| Edge in place, white top, edge-aligned        | FUL/behind-forward  | [U2] F'-U-L'  U' L-U'-F                                            |
+| Edge in place, white top, edge-not aligned    | TT already          | Touching-touching already .. F'-U-F R-U2-R'                        |
+| Corner in place, aligned                      | Orig Slow           | [U] R U' R' (tt at this point) U' F' U F                           |
+| Corner in place, white-facing, edge on F-side | Intuitive (rollov)  | F'-U'-F (rollover) U-F'-U'-F (do the rollover)                     |
+| Corner in place, white-facing, edge on R-side | TT with the R2 move | R-U' (touching-touching) R2(bring-to-F-face) F-R-F'(restore-R)     |
 
 Note:
 * When both are in place, white is on side as you start
