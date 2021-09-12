@@ -501,21 +501,28 @@ A: (1/9)
     +---+---+---+      +---+---+---+
     |   |Fx |   |  »   |   |Fx |   |
     +---+---+---+      +---+---+---+
-    | B | A |   |      | C |   |   |
+    | B |   |   |      | C |   |   |
     +---+---+---+      +---+---+---+
 ```
 
-L F'L B²L'F L B²L²
-    L        A-line-towards
+* algo: L F'L B²L'F L B²L²
+* Notice the top line's direction. The fixed corner is in bottom. The
+  rotation is from the fixed side to the other side. The both-moving
+  side is L. In case, you want to the roration to happen other way,
+  mirror the algo.
+* Mnemoic:
+```
+    L        L-towards
     F' L     F-towards,  L-towards  (with reverse soon)
     B2       B2
     L' F     L-away,  F-away
     L        L-towards
     B2       B2
     L2       L2
-
-There are 4 L-towards and B4 in total.
-There is a F-towards,L-towards that ha a reversing step
+```
+* There are 4 L-towards and B4 in total. For mnemonic sakes, the L/B
+  are where the pieces rotate.
+* There is a F-towards,L-towards that ha a reversing step
 
 E: (1/36)
 ```
@@ -537,6 +544,22 @@ Algo: F R'F'L F R  F'L²B'R B L B'R'B
        R     B
           L  B'
        R'    B
+
+* Mnemnic:
+    * Symmetric movement - pretty much symmetric algo.
+    * F (left to right),  right-towards
+    * F (right to left),  left-towards
+    * F (left to right),  right-away
+    * F (right to left),  left-2-times,  back-left-to-right
+    *                     right-away,    back-right-to-left
+    *                     left-towards,  back-left-to-right
+    *                     right-towards, back-right-to-left
+    * F & B alternate,
+    * R is outer-inner,
+    * L is just one direction.
+    * Both F & B start with right to left.
+    * R starts with towards
+    * L is always towards
 
 ## Both edges and corners
 
@@ -564,7 +587,6 @@ R B U'B'U B U B²R'B U B U'B'
     R' B  U
        B  U'
        B'
-
 
 J: (1/9)
 ```
@@ -744,3 +766,20 @@ double                    D
 Mnemonic: all-tamil-radio, digital-tech-talk, aooo, ad
 
 
+
+# Mnemomic try
+
+F  ka,ga
+B  ba,pa
+L  la
+R  ra
+U  va
+D  da, ta
+
+Fillers: cha, ja, tha, dha, ya, sa, sh, ha
+
+a   e   u   ae       o
+
+aa  ee  uu  aee  i   oo
+
+ou, am, aha
