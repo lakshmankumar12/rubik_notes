@@ -99,6 +99,7 @@ Edge to fix is at F-R. White on corner is on right side.
     * Algo: F' U F' U' L' U L F2
     * how it works:
         * Here is a pic of the F-face and U-face. (DD is also WW - the not-to-disturb ones)
+            ```
             XX  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  DD   XX  XX  DD   FF  XX  XX   XX  XX  XX   XX  XX  XX
             XX  XX  XX   XX  XX  XX   FF  XX  XX   FF  XX  XX   XX  XX  DD   XX  XX  DD   FF  XX  XX   XX  XX  XX   XX  XX  XX
             XX  XX  XX   XX  FF  WW   WW  XX  XX   XX  DD  DD   XX  FF  XX   FF  FF  XX   XX  DD  DD   WW  DD  DD   XX  XX  XX
@@ -107,6 +108,8 @@ Edge to fix is at F-R. White on corner is on right side.
             FF  FF  RR   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   FF  FF  FF   FF  FF  FL
             FF  FF  RR   XX  FF  FF   XX  FF  FF   FF  XX  XX   FF  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX   FF  FF  FL
             Start           F'            U            F'           U'          L'            U           L            F2
+
+            ```
         * You can observe the flipping happening with practice.
 
 If W is facing you, then simply keep the corner/edge to fix on the L-side and mirror the algo
@@ -136,6 +139,7 @@ Not sure if WW on right, and facing side has FF instead of RR of corner-piece, i
         * Inverse: F' U La U Lt U' F U2
     * How it works?
         * Just keep doing it and see the flow!
+            ```
                                                               ^FF-RR
             XX  XX  XX   WW  XX  XX   WW  XX  XX   XX  XX  WW   XX  XX  WW   WW  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX
             XX  XX  XX   XX  XX  XX   XX  XX  XX   RR  XX  XX   XX  XX  XX   XX  XX  XX   RR  XX  XX   XX  XX  XX   XX  XX  XX
@@ -145,6 +149,7 @@ Not sure if WW on right, and facing side has FF instead of RR of corner-piece, i
             FF  FF  FF   FF  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   FF  FF  FF
             FF  FF  XX   FF  FF  XX   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   FF  FF  FF
               Start         [U2]           F'          U           L'(away)      U'        L(towards)      U'          F voila!
+            ```
         * The idea is to put the corner below to the edge intead of above it as its at the start.
         * For this, we bring the edge on to the B-face from F-face via (F'-U-Laway).
         * Now we bring the corner atop it - so that its now behind edge. (U')
@@ -203,6 +208,7 @@ Note flip, and keep white as your F face.
 O.Algo: F D' F2 R F R'
 Algo:   R U' R2 F R F'
     Inverse: F R' F' R2 U R'
+            ```
             XX  XX  XX   XX  XX  XX   XX  XX  WW   XX  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX
             XX  XX  FF   XX  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX
             XX  XX  XX   XX  XX  WW   XX  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX
@@ -215,6 +221,7 @@ Algo:   R U' R2 F R F'
                                                    F face is good,
                                                    but R face is
                                                    wrong)
+            ```
     * R-U' gets its touching-touching.
     * R2   brings it aligned on F-face
     * F-R-F' restores the R-face.
@@ -303,6 +310,7 @@ Edge to fix is at F-R. White on corner is on right side.
     * Algo: F' U F' U' L' U L F2
     * how it works:
         * Here is a pic of the F-face and U-face. (DD is also WW - the not-to-disturb ones)
+            ```
             XX  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  DD   XX  XX  DD   FF  XX  XX   XX  XX  XX   XX  XX  XX
             XX  XX  XX   XX  XX  XX   FF  XX  XX   FF  XX  XX   XX  XX  DD   XX  XX  DD   FF  XX  XX   XX  XX  XX   XX  XX  XX
             XX  XX  XX   XX  FF  WW   WW  XX  XX   XX  DD  DD   XX  FF  XX   FF  FF  XX   XX  DD  DD   WW  DD  DD   XX  XX  XX
@@ -311,6 +319,7 @@ Edge to fix is at F-R. White on corner is on right side.
             FF  FF  RR   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   FF  FF  FF   FF  FF  FL
             FF  FF  RR   XX  FF  FF   XX  FF  FF   FF  XX  XX   FF  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX   FF  FF  FL
             Start           F'            U            F'           U'          L'            U           L            F2
+            ```
         * You can observe the flipping happening with practice.
 
 If W is facing you, then simply keep the corner/edge to fix on the L-side and mirror the algo
@@ -340,6 +349,7 @@ Not sure if WW on right, and facing side has FF instead of RR of corner-piece, i
         * Inverse: F' U La U Lt U' F U2
     * How it works?
         * Just keep doing it and see the flow!
+            ```
                                                               ^FF-RR
             XX  XX  XX   WW  XX  XX   WW  XX  XX   XX  XX  WW   XX  XX  WW   WW  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX
             XX  XX  XX   XX  XX  XX   XX  XX  XX   RR  XX  XX   XX  XX  XX   XX  XX  XX   RR  XX  XX   XX  XX  XX   XX  XX  XX
@@ -349,6 +359,7 @@ Not sure if WW on right, and facing side has FF instead of RR of corner-piece, i
             FF  FF  FF   FF  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   FF  FF  FF
             FF  FF  XX   FF  FF  XX   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   XX  FF  FF   FF  FF  FF
               Start         [U2]           F'          U           L'(away)      U'        L(towards)      U'          F voila!
+            ```
         * The idea is to put the corner below to the edge intead of above it as its at the start.
         * For this, we bring the edge on to the B-face from F-face via (F'-U-Laway).
         * Now we bring the corner atop it - so that its now behind edge. (U')
@@ -407,6 +418,7 @@ Note flip, and keep white as your F face.
 O.Algo: F D' F2 R F R'
 Algo:   R U' R2 F R F'
     Inverse: F R' F' R2 U R'
+            ```
             XX  XX  XX   XX  XX  XX   XX  XX  WW   XX  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX
             XX  XX  FF   XX  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX
             XX  XX  XX   XX  XX  WW   XX  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX   XX  XX  XX
@@ -419,6 +431,7 @@ Algo:   R U' R2 F R F'
                                                    F face is good,
                                                    but R face is
                                                    wrong)
+            ```
     * R-U' gets its touching-touching.
     * R2   brings it aligned on F-face
     * F-R-F' restores the R-face.
@@ -441,6 +454,7 @@ Algo:   F' U' F U F' U' F
 ## Only edges to position
 
 U: (1/9)
+```
     +---+---+---+      +---+---+---+
     |   |   |   |      |   |   |   |
     +---+---+---+      +---+---+---+
@@ -448,10 +462,12 @@ U: (1/9)
     +---+---+---+      +---+---+---+
     |   | A |   |      |   | C |   |
     +---+---+---+      +---+---+---+
+```
 
 Regular Mu-mUm-uM (or) Mu'-mUm- u'M
 
 Z: (1/36)
+```
     +---+---+---+      +---+---+---+
     |   | B |   |      |   | A |   |
     +---+---+---+      +---+---+---+
@@ -459,10 +475,12 @@ Z: (1/36)
     +---+---+---+      +---+---+---+
     |   | C |   |      |   | D |   |
     +---+---+---+      +---+---+---+
+```
 
 Regaular:  Mu-Mu-m'-UMU-m'-U
 
 H: (1/72)
+```
     +---+---+---+      +---+---+---+
     |   | B |   |      |   | A |   |
     +---+---+---+      +---+---+---+
@@ -470,12 +488,14 @@ H: (1/72)
     +---+---+---+      +---+---+---+
     |   | A |   |      |   | B |   |
     +---+---+---+      +---+---+---+
+```
 
 Regular:  Mu-MUM-uM
 
 ## Only corners to postion
 
 A: (1/9)
+```
     +---+---+---+      +---+---+---+
     | C |   | A |      | A |   | B |
     +---+---+---+      +---+---+---+
@@ -483,6 +503,7 @@ A: (1/9)
     +---+---+---+      +---+---+---+
     | B | A |   |      | C |   |   |
     +---+---+---+      +---+---+---+
+```
 
 L F'L B²L'F L B²L²
     L        A-line-towards
@@ -497,6 +518,7 @@ There are 4 L-towards and B4 in total.
 There is a F-towards,L-towards that ha a reversing step
 
 E: (1/36)
+```
     +---+---+---+      +---+---+---+
     | B |   | A |      | A |   | B |
     +---+---+---+      +---+---+---+
@@ -504,6 +526,7 @@ E: (1/36)
     +---+---+---+      +---+---+---+
     | D |   | C |      | C |   | D |
     +---+---+---+      +---+---+---+
+```
 
 Algo: F R'F'L F R  F'L²B'R B L B'R'B
 
@@ -522,6 +545,7 @@ Algo: F R'F'L F R  F'L²B'R B L B'R'B
 #### middle into corner line
 
 T: (1/18)
+```
     +---+---+---+      +---+---+---+
     | C | D | A |      | A | B | C |
     +---+---+---+      +---+---+---+
@@ -529,6 +553,7 @@ T: (1/18)
     +---+---+---+      +---+---+---+
     |   | B |   |      |   | D |   |
     +---+---+---+      +---+---+---+
+```
 
 R B U'B'U B U B²R'B U B U'B'
 
@@ -542,6 +567,7 @@ R B U'B'U B U B²R'B U B U'B'
 
 
 J: (1/9)
+```
     +---+---+---+      +---+---+---+
     |   |   | D |      |   |   | A |
     +---+---+---+      +---+---+---+
@@ -549,6 +575,7 @@ J: (1/9)
     +---+---+---+      +---+---+---+
     |   | B | A |      |   | C | D |
     +---+---+---+      +---+---+---+
+```
 
 B2 L  U L'B²R D'R D R²
 
@@ -561,6 +588,7 @@ B2 L  U L'B²R D'R D R²
 #### parallel
 
 F: (1/18)
+```
     +---+---+---+      +---+---+---+
     |   | C | D |      |   | A | B |
     +---+---+---+      +---+---+---+
@@ -568,6 +596,7 @@ F: (1/18)
     +---+---+---+      +---+---+---+
     |   | A | B |      |   | C | D |
     +---+---+---+      +---+---+---+
+```
 
 L²F'L D²R'B R D²L B L F L'B'
 
@@ -581,6 +610,7 @@ L²F'L D²R'B R D²L B L F L'B'
 
 V: (1/18)
 
+```
     +---+---+---+      +---+---+---+
     |   |   | C |      |   |   | A |
     +---+---+---+      +---+---+---+
@@ -588,6 +618,7 @@ V: (1/18)
     +---+---+---+      +---+---+---+
     | A | B |   |      | C | D |   |
     +---+---+---+      +---+---+---+
+```
 
 F'U F'U'R'D R'D'R²F'R'F R F
 
@@ -604,6 +635,7 @@ F'U F'U'R'D R'D'R²F'R'F R F
 
 Y: (1/18)
 
+```
     +---+---+---+      +---+---+---+
     |   |   | C |      |   |   | A |
     +---+---+---+      +---+---+---+
@@ -611,6 +643,7 @@ Y: (1/18)
     +---+---+---+      +---+---+---+
     | A | B |   |      | C | D |   |
     +---+---+---+      +---+---+---+
+```
 
 R B U'B'R D B'L'B'L B²D'R²
 
@@ -626,6 +659,7 @@ R B U'B'R D B'L'B'L B²D'R²
 
 N: (1/36)
 
+```
     +---+---+---+      +---+---+---+
     |   | D | C |      |   | A | B |
     +---+---+---+      +---+---+---+
@@ -633,6 +667,7 @@ N: (1/36)
     +---+---+---+      +---+---+---+
     | B | A |   |      | C | D |   |
     +---+---+---+      +---+---+---+
+```
 
 L D'B L'D²R F' R'D²L²B'L'D L'
 
@@ -647,6 +682,7 @@ L D'B L'D²R F' R'D²L²B'L'D L'
 #### Disjoint
 
 R: (1/9)
+```
     +---+---+---+      +---+---+---+
     | B |   | A |      | A |   | B |
     +---+---+---+      +---+---+---+
@@ -654,6 +690,7 @@ R: (1/9)
     +---+---+---+      +---+---+---+
     |   | C |   |      |   | D |   |
     +---+---+---+      +---+---+---+
+```
 
 F L U L'F L U'F U F U'F'L'F²
 
@@ -670,6 +707,7 @@ F L U L'F L U'F U F U'F'L'F²
 
 G: (2/9)                                     G: mirror:
 
+```
    +---+---+---+      +---+---+---+             +---+---+---+      +---+---+---+
    | B | Y | C |      | A | X | B |             | A | Z | B |      | A | X | B |
    +---+---+---+      +---+---+---+             +---+---+---+      +---+---+---+
@@ -677,6 +715,7 @@ G: (2/9)                                     G: mirror:
    +---+---+---+      +---+---+---+             +---+---+---+      +---+---+---+
    |Fx |Fx | A |      |Fx |Fx | C |             | B |Fx |Fx |      | C |Fx |Fx |
    +---+---+---+      +---+---+---+             +---+---+---+      +---+---+---+
+```
 
    F U F' L2 D' B U' B' U B' D L2               F' U' F R2 D B' U B U' B D' R2
 
