@@ -497,32 +497,23 @@ Regular:  Mu-MUM-uM
 A: (1/9)
 ```
     +---+---+---+      +---+---+---+
-    | C |   | A |      | A |   | B |
+    | B |   | C |      | A |   | B |
     +---+---+---+      +---+---+---+
     |   |Fx |   |  »   |   |Fx |   |
     +---+---+---+      +---+---+---+
-    | B |   |   |      | C |   |   |
+    |   |   | A |      |   |   | C |
     +---+---+---+      +---+---+---+
 ```
 
-* algo: L F'L B²L'F L B²L²
-* Notice the top line's direction. The fixed corner is in bottom. The
-  rotation is from the fixed side to the other side. The both-moving
-  side is L. In case, you want to the roration to happen other way,
-  mirror the algo.
-* Mnemoic:
-```
-    L        L-towards
-    F' L     F-towards,  L-towards  (with reverse soon)
-    B2       B2
-    L' F     L-away,  F-away
-    L        L-towards
-    B2       B2
-    L2       L2
-```
-* There are 4 L-towards and B4 in total. For mnemonic sakes, the L/B
-  are where the pieces rotate.
-* There is a F-towards,L-towards that ha a reversing step
+Bingo: R' F R' B B R F R' B B R2
+Note:
+* Fixed in LF corner. The one in RF goes up diagnoally
+* This is exactly same as G as well.
+Mirror algo:
+* Keep fixed in R corner
+
+Algo:  L F' L B B L' F L B B L'2
+
 
 E: (1/36)
 ```
@@ -570,23 +561,34 @@ Algo: F R'F'L F R  F'L²B'R B L B'R'B
 T: (1/18)
 ```
     +---+---+---+      +---+---+---+
-    | C | D | A |      | A | B | C |
+    | D |   |   |      | A |   |   |
     +---+---+---+      +---+---+---+
-    |   |Fx |   |  »   |   |Fx |   |
+    | C |Fx | B |  »   | B |Fx | C |
     +---+---+---+      +---+---+---+
-    |   | B |   |      |   | D |   |
+    | A |   |   |      | D |   |   |
     +---+---+---+      +---+---+---+
 ```
 
-R B U'B'U B U B²R'B U B U'B'
+L²D F²D'L²B²D'R²D B² U'
 
-    R  B  U'
-       B' U
-       B  U
-       B2
-    R' B  U
-       B  U'
-       B'
+    L2 D  F2
+       D'
+    L2       B2
+       D'       R2
+       D     B2
+    U'
+
+Mnemonic:
+    Long Drive to France and Denmark
+    Lost Bracelet
+    Dont Recall
+    Double Box
+    Uncovered
+
+* Note the orientation of T. Its on L side.
+* All of L2, F2, R2, B2 are double.
+* D is single, and follows D-D'-D'-D pattern
+
 
 J: (1/9)
 ```
@@ -606,6 +608,12 @@ B2 L  U L'B²R D'R D R²
     B2      R  D'
             R  D
             R2
+
+Mnemonic:
+    Big Leopard under Log             U-is in the meeting point of L (Both L&Utowards)
+    Brown Rabbit Dunks                D-is same dir as U. (R is always away)
+    Round Diamond Richochets          D-now opp.
+
 
 #### parallel
 
@@ -659,24 +667,23 @@ Y: (1/18)
 
 ```
     +---+---+---+      +---+---+---+
-    |   |   | C |      |   |   | A |
+    | D | C |   |      | A | B |   |
     +---+---+---+      +---+---+---+
-    | D |Fx |   |  »   | B |Fx |   |
+    | B |Fx |   |  »   | C |Fx |   |
     +---+---+---+      +---+---+---+
-    | A | B |   |      | C | D |   |
+    |   |   | A |      |   |   | D |
     +---+---+---+      +---+---+---+
 ```
 
-R B U'B'R D B'L'B'L B²D'R²
-
-    R  B  U'
-       B'
-    R        D
-       B'       L'
-       B'       L
-       B2    D'
-    R2
-
+Bingo: F R  U'
+         R' U'
+         R  U
+         R' F'
+         R  U
+         R' U'
+         R' F
+         R  F'
+No need for mirror. Its just the same
 
 
 N: (1/36)
@@ -690,16 +697,17 @@ N: (1/36)
     | B | A |   |      | C | D |   |
     +---+---+---+      +---+---+---+
 ```
+                                                   Mirror
+L D'B L'D²R F' R'D²L²B'L'D L'                      L  D' B  L' D² R  F' R' D² L² B' L' D  L'
+                                                   R' D  B' R  D2 L' F  L  D2 R2 B  R  D' R
 
-L D'B L'D²R F' R'D²L²B'L'D L'
-
-    L   D'  B
-    L'  D2     R  F'
-               R'
-        D2
-    L2      B'
-    L'  D
-    L'
+    L   D'  B                                      R' D  B'
+    L'  D2     R  F'                               R  D2    L' F
+               R'                                           L
+        D2                                            D2
+    L2      B'                                     R2    B
+    L'  D                                          R  D'
+    L'                                             R
 
 #### Disjoint
 
@@ -725,6 +733,12 @@ F L U L'F L U'F U F U'F'L'F²
     L'
   F2
 
+Flu-lasts-Flew
+Fakir-until-Fall
+Uganda-faces-Light-Freeze
+* F is always towards except faces/freeze, whihc are away/double.
+* L/U both start with towards. its both L-L'-L-L' and U-U'-U-U'.
+
 ### both 3
 
 G: (2/9)                                     G: mirror:
@@ -740,6 +754,8 @@ G: (2/9)                                     G: mirror:
 ```
 
    F U F' L2 D' B U' B' U B' D L2               F' U' F R2 D B' U B U' B D' R2
+Inverting:
+   L2 D' B U' B U  B' D L2 F U' F'
 
 To-ingrain:                                  To-ingrain:
 Keep fixed on the fixed side:                Keep fixed on the fixed side:
@@ -750,36 +766,63 @@ Keep fixed on the fixed side:                Keep fixed on the fixed side:
     D-towards                                    D-towards
     B-towards                                    B-towards
         U-away                                       U-away
-        B-opp                                        B-opp
-        U-opp                                        U-opp
-        B-opp                                        B-opp
-    D-opp                                        D-opp
+        B-opp (away)                                 B-opp
+        U-opp (towards)                              U-opp
+        B-opp (away)                                 B-opp
+    D-opp     (away)                             D-opp
     L2                                           L2
 
-away,towards,restore   ATR
-double                 D
+away,towards,restore      ATR
+double                    D
 towards                   T
-towards-away-opp-opp-opp  TAOOO
+towards-away-opp-opp-opp  TAOOO (ATA)
 restore (away)            A
 double                    D
 
-Mnemonic: all-tamil-radio, digital-tech-talk, aooo, ad
+Mnemonic: at&t           , digital-tech-talk, aata, ad
+          works on: FUF (ATT),
+                    LDB (DTT)
+                    UBUB (AATA)
+                    DL   (AD)
+
+Inverting:
+   L2 D' B U' B U B' D L2 F U' F'
+
+    L2 - Double Fx Side 
+    D' - towards
+    B  - towards
+    U' - away
+    B  - towards
+    U  - towards
+    B' - away
+    D  - away
+    L2 - double
+    F  - away
+    U' - away
+    F' - towards
+
+DTTA, TT, AAD, AAT
+
+Drink That Tumbler of Alchohol, 
+Think Tank
+All Atoms  Discharged
+All Air    Transformed
+Works on:     LDBU  (DTTA)
+              BU    (TT)
+              BDL   (AAD)
+              FUF   (AAT)
 
 
+## Summary
 
-# Mnemomic try
-
-F  ka,ga
-B  ba,pa
-L  la
-R  ra
-U  va
-D  da, ta
-
-Fillers: cha, ja, tha, dha, ya, sa, sh, ha
-
-a   e   u   ae       o
-
-aa  ee  uu  aee  i   oo
-
-ou, am, aha
+* U, Z, H  - Edge only stuff, the Mu algos.
+* A        - Corner only - triple turn, R'F-R'BBR algo.
+* Y        - Cut across - R-RURU algo
+* G        - 3-corner/edge - AT&T,DigitalTechTalk,Ad.  DrintThatTumblerofAlchohol-ThinkTank-AllAtomDischarge-AllAirTransformed
+* E        - Corner only - symmetric. Symmetric algo.
+* T        - Corner/Edge touching in. LongDriveToFranceDenmark
+* J        - Corner/Edge touching in. BigLeopardUnderLog
+Learning
+* R        - Disjoint
+Yet-to
+* V,F,N
