@@ -13,21 +13,6 @@
 | Corner in place, aligned                      | Orig Slow           | [U] R U' R' (tt at this point) U' F' U F                           |
 | Corner in place, white-facing, edge on F-side | Intuitive (rollov)  | F'-U'-F (rollover) U-F'-U'-F (do the rollover)                     |
 | Corner in place, white-facing, edge on R-side | TT with the R2 move | R-U' (touching-touching) R2(bring-to-F-face) F-R-F'(restore-R)     |
-# F2L algo
-
-# Summary table
-
-| Situation                                     | Mnenomic            | Algo                                                               |
-| --------------                                | -----------------   | ----                                                               |
-| Both are in place, both to flip               | Algo (270 corner)   | algo: F U F U'  ..  L' U L .. F2  (white should be on side)        |
-| Both are in place, edge ok, corner flip       | RuRuRuuR            | F2 U2, and then R-U-R'-U-R-U2-R   (white should be on side)        |
-| Both are in place, edge flip, corner ok       | fur-fru             | fur-fru..  F2-U2-R' F2-R-U2 F'-U-F                                 |
-| Edge in place, white-on-side, edge ok/not-ok  | W.Down              | [U] (white on f-face). F(white-down), U/U', F' (touching/rollover) |
-| Edge in place, white top, edge-aligned        | FUL/behind-forward  | [U2] F'-U-L'  U' L-U'-F                                            |
-| Edge in place, white top, edge-not aligned    | TT already          | Touching-touching already .. F'-U-F R-U2-R'                        |
-| Corner in place, aligned                      | Orig Slow           | [U] R U' R' (tt at this point) U' F' U F                           |
-| Corner in place, white-facing, edge on F-side | Intuitive (rollov)  | F'-U'-F (rollover) U-F'-U'-F (do the rollover)                     |
-| Corner in place, white-facing, edge on R-side | TT with the R2 move | R-U' (touching-touching) R2(bring-to-F-face) F-R-F'(restore-R)     |
 
 Note:
 * When both are in place, white is on side as you start
@@ -451,6 +436,8 @@ Algo:   F' U' F U F' U' F
 
 # Lost orientation algos
 
+Link: http://www.ws.binghamton.edu/fridrich/Mike/permute.html
+
 ## Only edges to position
 
 U: (1/9)
@@ -507,7 +494,7 @@ A: (1/9)
 
 Bingo: R' F R' B B R F R' B B R2
 Note:
-* Fixed in LF corner. The one in RF goes up diagnoally
+* Fixed in LF corner. Rotates clockwise -  The one in RF goes up diagnoally
 * This is exactly same as G as well.
 Mirror algo:
 * Keep fixed in R corner
@@ -549,7 +536,7 @@ Algo: F R'F'L F R  F'L²B'R B L B'R'B
     * R is outer-inner,
     * L is just one direction.
     * Both F & B start with right to left.
-    * R starts with towards
+    * R starts with towards (to remember)
     * L is always towards
 
 ## Both edges and corners
@@ -614,29 +601,41 @@ Mnemonic:
     Brown Rabbit Dunks                D-is same dir as U. (R is always away)
     Round Diamond Richochets          D-now opp.
 
+* B is double.
+* L is towards/away (L-L')
+* D is towards/away (D-D')
+* R is always away
+* One U is towards.
 
 #### parallel
 
 F: (1/18)
 ```
     +---+---+---+      +---+---+---+
-    |   | C | D |      |   | A | B |
+    | C | D |   |      | A | B |   |
     +---+---+---+      +---+---+---+
     |   |Fx |   |  »   |   |Fx |   |
     +---+---+---+      +---+---+---+
-    |   | A | B |      |   | C | D |
+    | A | B |   |      | C | D |   |
     +---+---+---+      +---+---+---+
 ```
 
-L²F'L D²R'B R D²L B L F L'B'
+B L'F U²B'R B'F²D²F²R'B F' U2
 
-    L2 F'
-    L     D2  R'  B
-              R
-          D2
-    L             B
-    L  F
-    L'            B'
+    B  L' F  U2              back lit fit versa         towards-away-away-double
+    B'          R            bend right                 away-away
+    B'    F2       D2        black  face  dazzles       away-double-double
+          F2    R'                  frigid ring         double-towards
+    B     F' U2              bring  forth               towards-towards-double
+
+* first half mostly away (except for begging B) - 5/7.
+* The 3 doubles split the halfs
+* Second half is towards
+
+ (14,17,14,5) L²F'L D²R'B R D²L B L F L'B'
+ (13,18,12,6) (U3)R'L F²L D'R F²L'U R²L'B²R²
+ (13,17,12,6) (U2)B L'F U²B'R B'F²D²F²R'B F'
+ (16,16,16,4) (U1)F R U'B U F'B'U B U'F R'F'R B'R'
 
 V: (1/18)
 
@@ -660,6 +659,17 @@ F'U F'U'R'D R'D'R²F'R'F R F
     F      R
     F
 
+F' U F' U'
+R' D R' D'
+R2
+F' R'
+F  R F
+
+* No Ls. Its just F-R (The main action sides) and U and D.
+* F' and R' have a pattern and rhyme with U and D. (both u/d are u-u', d-d')
+    * Mnemomic: "File Usefully for Urself, Read documents rightly doctor"
+* R2 stops the rhyme.
+* F' R' F R F
 
 #### Cutting through
 
@@ -697,17 +707,27 @@ N: (1/36)
     | B | A |   |      | C | D |   |
     +---+---+---+      +---+---+---+
 ```
-                                                   Mirror
-L D'B L'D²R F' R'D²L²B'L'D L'                      L  D' B  L' D² R  F' R' D² L² B' L' D  L'
-                                                   R' D  B' R  D2 L' F  L  D2 R2 B  R  D' R
+                                 Mirror
+L D'B L'D²R F' R'D²L²B'L'D L'    L  D' B  L' D² R  F' R' D² L² B' L' D  L'
+                                 R' D  B' R  D2 L' F  L  D2 R2 B  R  D' R
 
-    L   D'  B                                      R' D  B'
-    L'  D2     R  F'                               R  D2    L' F
-               R'                                           L
-        D2                                            D2
-    L2      B'                                     R2    B
-    L'  D                                          R  D'
-    L'                                             R
+    L   D'  B                    R' D  B'
+    L'  D2     R  F'             R  D2    L' F
+               R'                         L
+        D2                          D2
+    L2      B'                   R2    B
+    L'  D                        R  D'
+    L'                           R
+
+
+L D' B L' D2 - Long day But Love Donuts  -  towards, towards, towards away    double
+R F'   R' D2 - Right for Royal   Drive      away     towards,         towards double
+L2 B'        - Lets  Buy                    double   away
+L' D L'      - Long  Double Laces           away     away  away
+
+* first half is mostly towards, second half is all away.
+* Long day starts towards
+* Love-Right is away in first half
 
 #### Disjoint
 
@@ -815,14 +835,38 @@ Works on:     LDBU  (DTTA)
 
 ## Summary
 
-* U, Z, H  - Edge only stuff, the Mu algos.
-* A        - Corner only - triple turn, R'F-R'BBR algo.
-* Y        - Cut across - R-RURU algo
-* G        - 3-corner/edge - AT&T,DigitalTechTalk,Ad.  DrintThatTumblerofAlchohol-ThinkTank-AllAtomDischarge-AllAirTransformed
-* E        - Corner only - symmetric. Symmetric algo.
-* T        - Corner/Edge touching in. LongDriveToFranceDenmark
-* J        - Corner/Edge touching in. BigLeopardUnderLog
-Learning
-* R        - Disjoint
-Yet-to
-* V,F,N
+legend:
+» rotation other (Just replace U-U' or start algo reversed.)
+* mirror   other
+↔ symmetric algo - just one.
+
+* U», Z↔, H↔  - Edge only stuff, the Mu algos.
+
+* A*          - Corner only - triple turn, R'F-R'BBR algo.
+* E↔          - Corner only - symmetric. Symmetric algo.
+
+* G»*         - 3-corner/edge - AT&T,DigitalTechTalk,Ad.  DrintThatTumblerofAlchohol-ThinkTank-AllAtomDischarge-AllAirTransformed
+
+* T↔          - Corner/Edge touching in. LongDriveToFranceDenmark
+* J*          - Corner/Edge touching in. BigLeopardUnderLog
+
+* R*          - Disjoint.  Flu..Fakir
+
+* Y↔          - Cut across - F-RURU algo
+* N*          - Cut across - Long-day-but-love-donuts
+
+* V↔          - Parallel.  File usefully for urself
+* F↔          - Parallel.  Back lit fit versa
+
+# Yellow-face collateral damages
+
+
+| Case              | Corners Damage            | Edge Damage          |
+| ----------------- | ---------------           | -----------          |
+| Regular fish      | opps exch                 | F-fixed, 3-anti-clck |
+| Other   fish      | opps exch                 | F-fixed, 3-clk       |
+| Chameleon car     | opp-exch                  | R-fixed, 3-anti-clk  |
+| Chameleon         | BR-fix. other-3 clockwise | no-change            |
+| Diagnals          | BR-fix. other-3 anti-clk  | no-change            |
+| Headlights        | BR-fix. other-3 clockwise | no-change            |
+| Double headlights | no change                 | F-fixed, 3-clk       | Only case of choice.
